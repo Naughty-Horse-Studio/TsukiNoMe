@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069d1e6e348e55446bdb89ed9b833802, type: 3}
+  m_Name: RPG-7 settings
+  m_EditorClassIdentifier: 
+  weaponName: RPG-7
+  weaponType: 6
+  weaponIcon: {fileID: 21300000, guid: 1639ad923735218439d677e3f6ddff09, type: 3}
+  MuzzleFlashParticlesFX: {fileID: 198918201244081940, guid: 46d4eddf844d2514fb79db11ee0f38e9,
+    type: 3}
+  shotSFX: {fileID: 8300000, guid: aae3ec5e0af0e3d49a8c71a68508fa24, type: 3}
+  reloadingSFX: {fileID: 0}
+  emptySFX: {fileID: 0}
+  shell: {fileID: 0}
+  shellsPoolSize: 1
+  shellEjectingForce: 0
+  damageMinimum: 0
+  damageMaximum: 0
+  rigidBodyHitForce: 0
+  fireRate: 0
+  spread: 0.01
+  recoil: {x: 0, y: 0}
+  canUseScope: 0
+  scopeFOV: 10
+  scopeSensitivityX: 0.1
+  scopeSensitivityY: 0.1
+  meleeAttackDistance: 0
+  meleeAttackRate: 0.4
+  meleeDamagePoints: 0
+  meleeRigidbodyHitForce: 0
+  meleeHitTime: 0
+  meleeHitFX: {fileID: 0}
+  bulletInitialVelocity: 360
+  airResistanceForce: 1
+  projectile: {fileID: 4602211324696512007, guid: 19513b512677bfc4295666f021acc4ed,
+    type: 3}
+  projectilePoolSize: 3
+  grenadePrefab: {fileID: 0}
+  throwForce: 1500
+  shotgunLoadingClip: {fileID: 0}

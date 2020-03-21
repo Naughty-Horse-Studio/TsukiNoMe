@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd67af2ade7b38d4ca723452f74870d2, type: 3}
+  m_Name: Shelter
+  m_EditorClassIdentifier: 
+  BuildingName: Shelter
+  Description: Shelter
+  BuildingGameObject: {fileID: 8939664456803470756, guid: a7341ef96671cf14fb57a7d85412c138,
+    type: 3}
+  BuildingIcon: {fileID: 21300000, guid: 6c65c4f4f503fd64ca81a9bbc0ea76c1, type: 3}
+  buildingCostItems:
+  - {fileID: 965504096402307333, guid: ff67b05c25f6bb24ca955e737f9d74a2, type: 3}
+  - {fileID: 7559058385502669788, guid: e4fcd8c5cfec53d46b5df4cb9d5ebe8a, type: 3}
+  builingCostItemsAmont: 0400000004000000

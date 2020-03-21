@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3627694381390336406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3627694381390336409}
+  - component: {fileID: 3627694381390336410}
+  - component: {fileID: 3627694381390336411}
+  - component: {fileID: 3627694381390336404}
+  - component: {fileID: 3627694381390336405}
+  - component: {fileID: 3627694381390336408}
+  m_Layer: 0
+  m_Name: RPG Rocket
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3627694381390336409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3627694381390336406}
+  m_LocalRotation: {x: -0.011322671, y: 0.7070161, z: 0.7070161, w: 0.011322671}
+  m_LocalPosition: {x: 623.85, y: 17.997, z: 486.037}
+  m_LocalScale: {x: 42.043804, y: 42.043743, z: 42.04366}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 178.16501}
+--- !u!33 &3627694381390336410
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3627694381390336406}
+  m_Mesh: {fileID: 1988216149656743765, guid: 5b44565d2a954e84e9d39ba9fde0483a, type: 3}
+--- !u!23 &3627694381390336411
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3627694381390336406}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a48de5e0d5ccb60489d364f99f932ae4, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &3627694381390336404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3627694381390336406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90d963e53fb80a41848721cd206cddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1061034893
+  title: RPG Rocket
+  description: Explosive rocket for RPG missile launcher
+  type: 4
+  icon: {fileID: 21300000, guid: d7a48b9b206969c4cb386511640ee2ab, type: 3}
+  width: 1
+  height: 1
+  stackable: 1
+  maxStackSize: 5
+  stackSize: 1
+  weaponUnloadingItem: {fileID: 0}
+  weaponAmmoCount: 1
+  haveScopeAddon: 0
+  scopeImage: {fileID: 0}
+  scopeImageSize: {x: 0, y: 0}
+  scopeImagePosition: {x: 0, y: 0}
+  haveSilencerAddon: 0
+  silencerImage: {fileID: 0}
+  silencerImageSize: {x: 0, y: 0}
+  silencerImagePosition: {x: 0, y: 0}
+  onUseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: DarkTreeFPS.Item+OnUseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  onPickupEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: DarkTreeFPS.Item+OnPickupEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!136 &3627694381390336405
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3627694381390336406}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.00055033463
+  m_Height: 0.011487744
+  m_Direction: 1
+  m_Center: {x: -2.1397583e-11, y: -0.005743872, z: 0.0000000019132806}
+--- !u!54 &3627694381390336408
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3627694381390336406}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
