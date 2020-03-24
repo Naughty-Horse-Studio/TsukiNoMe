@@ -224,55 +224,59 @@ public class AudioManager : MonoBehaviour
 		_mixer.SetFloat(track, volume );
 	}
 
-	// -------------------------------------------------------------------------------
-	// Name	:	ConfigurePoolObject
-	// Desc	:	Used internally to configure a pool object
-	// -------------------------------------------------------------------------------
-	protected ulong ConfigurePoolObject( int poolIndex, string track, AudioClip clip, Vector3 position, float volume, float spatialBlend, float unimportance )
-	{	
-		// If poolIndex is out of range abort request
-		if (poolIndex<0 || poolIndex>=_pool.Count) return 0;
+    // -------------------------------------------------------------------------------
+    // Name	:	ConfigurePoolObject
+    // Desc	:	Used internally to configure a pool object
+    // -------------------------------------------------------------------------------
+    protected ulong ConfigurePoolObject(int poolIndex, string track, AudioClip clip, Vector3 position, float volume, float spatialBlend, float unimportance, float startTime, bool ignoreListenerPause)
+    {
+        // If poolIndex is out of range abort request
+        if (poolIndex < 0 || poolIndex >= _pool.Count) return 0;
 
-		// Get the pool item
-		AudioPoolItem poolItem = _pool[poolIndex];
+        // Get the pool item
+        AudioPoolItem poolItem = _pool[poolIndex];
 
-		// Generate new ID so we can stop it later if we want to
-		_idGiver++;
+        // Stop any previously playing coroutine
+        if (poolItem.Coroutine != null) StopCoroutine(poolItem.Coroutine);
 
-		// Configure the audio source's position and colume
-		AudioSource source 				= poolItem.AudioSource;		
-		source.clip 					= clip;		
-		source.volume			  		= volume;
-		source.spatialBlend				= spatialBlend;
-			
+        // Generate new ID so we can stop it later if we want to
+        _idGiver++;
 
-		// Assign to requested audio group/track
-		source.outputAudioMixerGroup 	= _tracks[track].Group;
+        // Configure the audio source's position and colume
+        AudioSource source = poolItem.AudioSource;
+        source.clip = clip;
+        source.volume = volume;
+        source.spatialBlend = spatialBlend;
+        source.ignoreListenerPause = ignoreListenerPause;
 
-		// Position source at requested position
-		source.transform.position 		= position;
+        // Assign to requested audio group/track
+        source.outputAudioMixerGroup = _tracks[track].Group;
 
-		// Enable GameObject and record that it is now playing
-		poolItem.Playing		= true;
-		poolItem.Unimportance	= unimportance;
-		poolItem.ID				= _idGiver;
-		poolItem.GameObject.SetActive (true);
-		source.Play();
-		poolItem.Coroutine 	= StopSoundDelayed( _idGiver, source.clip.length );
-		StartCoroutine( poolItem.Coroutine );
+        // Position source at requested position
+        source.transform.position = position;
 
-		// Add this sound to our active pool with its unique id
-		_activePool[_idGiver] = poolItem;
+        // Enable GameObject and record that it is now playing
+        poolItem.Playing = true;
+        poolItem.Unimportance = unimportance;
+        poolItem.ID = _idGiver;
+        source.time = Mathf.Min(startTime, source.clip.length);
+        poolItem.GameObject.SetActive(true);
+        source.Play();
+        poolItem.Coroutine = StopSoundDelayed(_idGiver, source.clip.length);
+        StartCoroutine(poolItem.Coroutine);
 
-		// Return the id to the caller
-		return _idGiver;
-	}
+        // Add this sound to our active pool with its unique id
+        _activePool[_idGiver] = poolItem;
 
-	// -------------------------------------------------------------------------------
-	// Name	:	StopSoundDelayed
-	// Desc	:   Stop a one shot sound from playing after a number of seconds
-	// -------------------------------------------------------------------------------
-	protected IEnumerator StopSoundDelayed( ulong id, float duration )
+        // Return the id to the caller
+        return _idGiver;
+    }
+
+    // -------------------------------------------------------------------------------
+    // Name	:	StopSoundDelayed
+    // Desc	:   Stop a one shot sound from playing after a number of seconds
+    // -------------------------------------------------------------------------------
+    protected IEnumerator StopSoundDelayed( ulong id, float duration )
 	{
 		yield return new WaitForSeconds( duration );
 		AudioPoolItem activeSound;
@@ -288,59 +292,86 @@ public class AudioManager : MonoBehaviour
 			// Make it available again
 			activeSound.Playing = false;
 		}
-	} 
-
-	// -------------------------------------------------------------------------------
-	// Name	:	PlayOneShotSound
-	// Desc	:	Scores the priority of the sound and search for an unused pool item
-	//			to use as the audio source. If one is not available an audio source
-	//			with a lower priority will be killed and reused
-	// -------------------------------------------------------------------------------
-	public ulong PlayOneShotSound( string track, AudioClip clip, Vector3 position, float volume, float spatialBlend, int priority=128 )
-	{
-		// Do nothing if track does not exist, clip is null or volume is zero
-		if (!_tracks.ContainsKey(track) || clip == null || volume.Equals(0.0f)) return 0;
-
-		float unimportance = (_listenerPos.position - position).sqrMagnitude / Mathf.Max(1, priority); 
-
-		int 	leastImportantIndex = -1;
-		float 	leastImportanceValue= float.MaxValue;
-
-		// Find an available audio source to use
-		for( int i=0; i<_pool.Count; i++)
-		{
-			AudioPoolItem poolItem = _pool[i];
-
-			// Is this source available
-			if (!poolItem.Playing) 
-				return ConfigurePoolObject( i, track, clip, position, volume, spatialBlend, unimportance );
-			else
-			// We have a pool item that is less important than the one we are going to play
-			if (poolItem.Unimportance>leastImportanceValue)
-			{
-				// Record the least important sound we have found so far
-				// as a candidate to relace with our new sound request
-				leastImportanceValue = poolItem.Unimportance;
-				leastImportantIndex	 = i;
-			}
-		}
-
-		// If we get here all sounds are being used but we know the least important sound currently being
-		// played so if it is less important than our sound request then use replace it
-		if (leastImportanceValue>unimportance)
-			return ConfigurePoolObject( leastImportantIndex, track, clip, position, volume, spatialBlend, unimportance );
-			
-
-		// Could not be played (no sound in the pool available)
-		return 0;
 	}
+    // -------------------------------------------------------------------------------
+    // Name :   StopSound
+    // Desc :   Stop Sound with the passed One SHot ID
+    // -------------------------------------------------------------------------------
+    public void StopSound(ulong id)
+    {
+        AudioPoolItem activeSound;
+        if (_activePool.TryGetValue(id, out activeSound))
+        {
+            if (activeSound.Coroutine != null)
+            {
+                StopCoroutine(activeSound.Coroutine);
+                activeSound.Coroutine = null;
+            }
+
+            activeSound.AudioSource.Stop();
+            activeSound.AudioSource.clip = null;
+            activeSound.GameObject.SetActive(false);
+            _activePool.Remove(id);
+
+            // Make it available again
+            activeSound.Playing = false;
+
+        }
+    }
+    // -------------------------------------------------------------------------------
+    // Name	:	PlayOneShotSound
+    // Desc	:	Scores the priority of the sound and search for an unused pool item
+    //			to use as the audio source. If one is not available an audio source
+    //			with a lower priority will be killed and reused
+    // -------------------------------------------------------------------------------
+    public ulong PlayOneShotSound(string track, AudioClip clip, Vector3 position, float volume, float spatialBlend, int priority = 128, float startTime = 0.0f, bool ignoreListenerPause = false)
+    {
+        // Do nothing if track does not exist, clip is null or volume is zero
+        if (!_tracks.ContainsKey(track) || clip == null || volume.Equals(0.0f)) return 0;
+
+        float unimportance = (_listenerPos.position - position).sqrMagnitude / Mathf.Max(1, priority);
+
+        int leastImportantIndex = -1;
+        float leastImportanceValue = float.MinValue;
 
 
-	// -------------------------------------------------------------------------------
-	// Name	:	PlayOneShotSoundDelayed
-	// Desc	:	Queue up a one shot sound to be played after a number of seconds
-	// -------------------------------------------------------------------------------
-	public IEnumerator PlayOneShotSoundDelayed( string track, AudioClip clip, Vector3 position, float volume, float spatialBlend, float duration, int priority=128 )
+
+        // Find an available audio source to use
+        for (int i = 0; i < _pool.Count; i++)
+        {
+            AudioPoolItem poolItem = _pool[i];
+
+            // Is this source available
+            if (!poolItem.Playing)
+                return ConfigurePoolObject(i, track, clip, position, volume, spatialBlend, unimportance, startTime, ignoreListenerPause);
+            else
+            // We have a pool item that is less important than the one we are going to play
+            if (poolItem.Unimportance > leastImportanceValue)
+            {
+                // Record the least important sound we have found so far
+                // as a candidate to relace with our new sound request
+                leastImportanceValue = poolItem.Unimportance;
+                leastImportantIndex = i;
+
+            }
+        }
+
+        // If we get here all sounds are being used but we know the least important sound currently being
+        // played so if it is less important than our sound request then use replace it
+        if (leastImportanceValue > unimportance)
+            return ConfigurePoolObject(leastImportantIndex, track, clip, position, volume, spatialBlend, unimportance, startTime, ignoreListenerPause);
+
+
+        // Could not be played (no sound in the pool available)
+        return 0;
+    }
+
+
+    // -------------------------------------------------------------------------------
+    // Name	:	PlayOneShotSoundDelayed
+    // Desc	:	Queue up a one shot sound to be played after a number of seconds
+    // -------------------------------------------------------------------------------
+    public IEnumerator PlayOneShotSoundDelayed( string track, AudioClip clip, Vector3 position, float volume, float spatialBlend, float duration, int priority=128 )
 	{
 		yield return new WaitForSeconds( duration );
 		PlayOneShotSound( track, clip, position, volume, spatialBlend, priority );
