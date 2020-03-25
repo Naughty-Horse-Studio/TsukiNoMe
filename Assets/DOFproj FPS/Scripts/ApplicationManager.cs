@@ -52,12 +52,26 @@ public class ApplicationManager : MonoBehaviour
 			_gameStateDictionary[gs.Key] = gs.Value;
 		}
 	}
+    public bool AreStatesSet(List<GameState> requiredStates)
+    {
 
-	// ----------------------------------------------------------------------------------------------
-	// Name	:	GetGameState
-	// Desc	:	Returns the value of a game state
-	// ----------------------------------------------------------------------------------------------
-	public string GetGameState( string key )
+        // Assume the states are all set and then loop to find a state to disprove this
+        for (int i = 0; i < requiredStates.Count; i++)
+        {
+            GameState state = requiredStates[i];
+
+            // Does the current state exist in the app dictionary?
+            string result = GetGameState(state.Key);
+            if (string.IsNullOrEmpty(result) || !result.Equals(state.Value)) return false;
+        }
+
+        return true;
+    }
+    // ----------------------------------------------------------------------------------------------
+    // Name	:	GetGameState
+    // Desc	:	Returns the value of a game state
+    // ----------------------------------------------------------------------------------------------
+    public string GetGameState( string key )
 	{
 		string result = null;
 		_gameStateDictionary.TryGetValue( key, out result);

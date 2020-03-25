@@ -18,6 +18,7 @@ TagManager:
   - Terrain
   - Loot
   - HeadShot
+  - Interactive
   layers:
   - Default
   - TransparentFX
