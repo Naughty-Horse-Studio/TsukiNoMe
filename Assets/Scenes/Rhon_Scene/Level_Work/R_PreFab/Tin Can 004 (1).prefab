@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5004051679997166262
+--- !u!1 &8422487776697063218
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1731233191572415415}
-  - component: {fileID: 397150428658220033}
-  - component: {fileID: 4800977366294330114}
-  - component: {fileID: 5658946638146621720}
+  - component: {fileID: 7322986105431514602}
+  - component: {fileID: 350739688732042445}
+  - component: {fileID: 2094097222063265426}
   m_Layer: 0
-  m_Name: WoodenChair Green
+  m_Name: Tin Can 004 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1731233191572415415
+--- !u!4 &7322986105431514602
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5004051679997166262}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -100.74528, y: -1.9962173, z: 46.82675}
-  m_LocalScale: {x: 57.787506, y: 57.78753, z: 57.78752}
+  m_GameObject: {fileID: 8422487776697063218}
+  m_LocalRotation: {x: -0.35355335, y: -0.61237246, z: -0.61237246, w: 0.35355335}
+  m_LocalPosition: {x: 21.020086, y: 0.8802084, z: 50.48911}
+  m_LocalScale: {x: 6.68087, y: 6.6808653, z: 6.6808634}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
---- !u!33 &397150428658220033
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -120.00001}
+--- !u!33 &350739688732042445
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5004051679997166262}
-  m_Mesh: {fileID: 4300128, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
---- !u!23 &4800977366294330114
+  m_GameObject: {fileID: 8422487776697063218}
+  m_Mesh: {fileID: 4300454, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+--- !u!23 &2094097222063265426
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5004051679997166262}
+  m_GameObject: {fileID: 8422487776697063218}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 598294a24c1f3484680de6a6005f0b25, type: 2}
+  - {fileID: 2100000, guid: 9979f8743d960c24790d92ed144ebc7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,17 +77,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5658946638146621720
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5004051679997166262}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300128, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
