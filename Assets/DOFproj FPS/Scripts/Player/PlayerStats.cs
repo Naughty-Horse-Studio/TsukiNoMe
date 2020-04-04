@@ -59,7 +59,9 @@ namespace DOFprojFPS
         [SerializeField] private Text _messagesDisplay = null;
         [SerializeField] private Text _missionText = null;
         [SerializeField] private float _missionTextDisplayTime = 3.0f;
- 
+
+        [SerializeField] private GameObject _flashLight = null;
+        [SerializeField] private bool _flashlightOnAtStart = true;
 
         private Color damageScreenColor_temp;
 
@@ -74,7 +76,9 @@ namespace DOFprojFPS
 
         private Collider _collider = null;
         private GameSceneManager _gameSceneManager = null;
+        private int _interactiveMask = 0;
 
+        private InputManager input;
         #region utility objects
         private Rigidbody playerRigidbody;
         private FPSController controller;
@@ -119,17 +123,21 @@ namespace DOFprojFPS
             playerCollider = GetComponent<CapsuleCollider>();
             weaponManager = FindObjectOfType<WeaponManager>();
             sway = FindObjectOfType<Sway>();
-            
-            if(!InputManager.useMobileInput)
+            input = FindObjectOfType<InputManager>();
+
+            if (!InputManager.useMobileInput)
             playerBody = FindObjectOfType<Body>().gameObject;
 
 
-            if (_gameSceneManager != null)
-            {
-                PlayerInfo info = new PlayerInfo();
-                info.collider = _collider;
-               _gameSceneManager.RegisterPlayerInfo(_collider.GetInstanceID(), info);
-            }
+            if (_flashLight)
+                _flashLight.SetActive(_flashlightOnAtStart);
+
+            //if (_gameSceneManager != null)
+            //{
+            //    PlayerInfo info = new PlayerInfo();
+            //    info.collider = _collider;
+            //   _gameSceneManager.RegisterPlayerInfo(_collider.GetInstanceID(), info);
+            //}
 
 
         }
@@ -168,6 +176,12 @@ namespace DOFprojFPS
 
             if (_inUse == false)
                 DrawPlayerStats();
+
+            if (Input.GetKeyDown(input.Flashlight))
+            {
+                if (_flashLight)
+                    _flashLight.SetActive(!_flashLight.activeSelf);
+            }
         }
         public void DoLevelComplete()
         {
