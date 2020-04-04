@@ -19,6 +19,7 @@ TagManager:
   - Loot
   - HeadShot
   - Interactive
+  - Flash Light
   layers:
   - Default
   - TransparentFX
