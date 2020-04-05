@@ -461,6 +461,8 @@ MonoBehaviour:
     Value: TRUE
   - Key: ACCESSCODE
     Value: FALSE
+  - Key: GENERATOR UNLOCKED
+    Value: FALSE
 --- !u!4 &1873550908
 Transform:
   m_ObjectHideFlags: 0
