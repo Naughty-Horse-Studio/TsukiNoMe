@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5305135585826669635}
   - component: {fileID: 1330907660634055288}
   - component: {fileID: 8097182252783711119}
+  - component: {fileID: 3604398908205935676}
   m_Layer: 0
   m_Name: debris_056 (1)
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2297519323591713595}
-  m_LocalRotation: {x: -0.0156100355, y: 0.09723081, z: -0.013459516, w: 0.99504846}
+  m_LocalRotation: {x: -0.01560893, y: 0.09722938, z: -0.013463371, w: 0.9950485}
   m_LocalPosition: {x: -17.893461, y: -0.8115374, z: 41.066296}
-  m_LocalScale: {x: 1.2999995, y: 1.2999995, z: 1.3000004}
+  m_LocalScale: {x: 0.8173741, y: 0.81737405, z: 0.81737494}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.6300001, y: 11.186001, z: -1.71}
 --- !u!33 &1330907660634055288
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -57,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4998753550894023008, guid: 6b32e53c46aeed44bbfb1e2a5b06d537, type: 3}
+  - {fileID: 2100000, guid: 557e3ef2bb4c42548b185c1f743104f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3604398908205935676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297519323591713595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6275438, y: 0.6059384, z: 1.3261057}
+  m_Center: {x: 9.4581565e-12, y: 0.0025391427, z: 0.0000007152627}

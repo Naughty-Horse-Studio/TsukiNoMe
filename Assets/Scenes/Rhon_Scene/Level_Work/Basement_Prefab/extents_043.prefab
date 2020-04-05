@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8639659640462025003}
   - component: {fileID: 7321136406091383397}
   - component: {fileID: 8323974834013227424}
+  - component: {fileID: 3336566598194473798}
+  - component: {fileID: 8050420966946910470}
   m_Layer: 0
   m_Name: extents_043
   m_TagString: Untagged
@@ -78,3 +80,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3336566598194473798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994361471291471923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3443531, y: 3.740374, z: 0.5535825}
+  m_Center: {x: 4.3706683e-14, y: 0, z: -0.47225678}
+--- !u!65 &8050420966946910470
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994361471291471923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3443531, y: 3.740374, z: 0.21244472}
+  m_Center: {x: 8.246858e-14, y: 0, z: 0.6428256}

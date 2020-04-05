@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1563514295657237167}
   - component: {fileID: 3565564049875329110}
   - component: {fileID: 4050413618053525602}
+  - component: {fileID: 1057884849183090421}
   m_Layer: 0
   m_Name: debris_109 (1)
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1057884849183090421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009599658484293924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7351527, y: 0.16692108, z: 1.3342414}
+  m_Center: {x: 0.000000029802266, y: -4.6837534e-16, z: 3.330669e-15}
