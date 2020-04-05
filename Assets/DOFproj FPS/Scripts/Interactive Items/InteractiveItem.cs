@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using DOFprojFPS;
 public class InteractiveItem : MonoBehaviour 
 {
 	// Inpector Assigned
@@ -14,7 +12,7 @@ public class InteractiveItem : MonoBehaviour
 
 	// Methods
 	public virtual string 	GetText		()	{ return null; }
-	//public virtual void 	Activate 	( CharacterManager characterManager) { }
+	public virtual void 	Activate 	( UseObjects useObjects) { }
 	protected virtual void  Start()
 	{
 		_gameSceneManager = GameSceneManager.instance;

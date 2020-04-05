@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using DOFprojFPS;
-using UnityEngine.UI;
+
 
 public class PlayerInfo
 {
 	public Collider 			collider 		 = null;
-//	public Text		characterManager = null;
+	public UseObjects 		    useObjects      = null;
 	public Camera				camera			 = null;
 	public CapsuleCollider		meleeTrigger	 = null;
 }
@@ -21,6 +20,8 @@ public class GameSceneManager : MonoBehaviour
 	// Inspector Assigned Variables
 	[SerializeField]	private ParticleSystem	_bloodParticles	=	null;
     [SerializeField]    private PlayerStats _playerStats = null;
+    [SerializeField]    private PlayerHUD _playerHUD = null;
+    [SerializeField]    private Camera _camera = null;
     // public Text playerStats;
     // Statics
     private static GameSceneManager	_instance	=	null;
@@ -35,7 +36,7 @@ public class GameSceneManager : MonoBehaviour
 	}
 	
 	// Private
-//	private Dictionary< int, AIStateMachine>		_stateMachines	=	new Dictionary<int, AIStateMachine>();
+///	private Dictionary< int, AIStateMachine>		_stateMachines	=	new Dictionary<int, AIStateMachine>();
 	private Dictionary< int, PlayerInfo >			_playerInfos	=	new Dictionary<int, PlayerInfo>();
 	private Dictionary< int, InteractiveItem>		_interactiveItems	=	new Dictionary<int, InteractiveItem>();
 	private Dictionary< int, MaterialController>	_materialControllers=	new Dictionary<int, MaterialController>();
@@ -46,7 +47,8 @@ public class GameSceneManager : MonoBehaviour
     private void Start()
     {
         // Start fading in
-        if (_playerStats) _playerStats.Fade(2.0f, ScreenFadeType.FadeIn);
+        if (_playerStats) _playerStats.Fade(2.0f, ScreenFadeType2.FadeIn);
+        if (_playerHUD) _playerHUD.Fade(2.0f, ScreenFadeType.FadeIn);
     }
 
     // --------------------------------------------------------------------
@@ -54,15 +56,15 @@ public class GameSceneManager : MonoBehaviour
     // Desc	:	Returns an AI State Machine reference searched on by the
     //			instance ID of an object
     // --------------------------------------------------------------------
-    //public AIStateMachine GetAIStateMachine( int key )
+    //public AIStateMachine GetAIStateMachine(int key)
     //{
-    //	AIStateMachine machine = null;
-    //	if (_stateMachines.TryGetValue( key, out machine ))
-    //	{
-    //		return machine;
-    //	}
+    //    AIStateMachine machine = null;
+    //    if (_stateMachines.TryGetValue(key, out machine))
+    //    {
+    //        return machine;
+    //    }
 
-    //	return null;
+    //    return null;
     //}
 
     // --------------------------------------------------------------------
@@ -86,13 +88,12 @@ public class GameSceneManager : MonoBehaviour
 	// --------------------------------------------------------------------
 	public PlayerInfo GetPlayerInfo( int key )
 	{
-		PlayerInfo info = null;
-		if (_playerInfos.TryGetValue( key, out info ))
-		{
-			return info;
-		}
+        if (_playerInfos.TryGetValue(key, out PlayerInfo info))
+        {
+            return info;
+        }
 
-		return null;
+        return null;
 	}
 
 	// --------------------------------------------------------------------
@@ -116,9 +117,8 @@ public class GameSceneManager : MonoBehaviour
 	// --------------------------------------------------------------------
 	public InteractiveItem GetInteractiveItem( int key )
 	{
-		InteractiveItem item = null;
-		_interactiveItems.TryGetValue(key, out item);
-		return item;
+        _interactiveItems.TryGetValue(key, out InteractiveItem item);
+        return item;
 	}
 
     public void RegisterMaterialController(int key, MaterialController controller)

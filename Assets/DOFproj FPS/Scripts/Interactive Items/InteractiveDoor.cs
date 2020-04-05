@@ -89,6 +89,8 @@ public class InteractiveDoor : InteractiveItem
     [Tooltip("A list of child transforms to animate")]
     [SerializeField] protected List<InteractiveDoorInfo> _doors = new List<InteractiveDoorInfo>();
 
+   
+
     [Header("Sounds")]
     [Tooltip("The AudioCollection to use for the door opening and closing sounds")]
     [SerializeField] protected AudioCollection _doorSounds = null;
@@ -111,6 +113,16 @@ public class InteractiveDoor : InteractiveItem
 
     [SerializeField] private PlayerStats _playerStats = null;
 
+
+   // private GameObject use;
+   // private GameObject useCursor;
+    public static bool useState;
+    [Tooltip("The distance within which you can open/close Doors.")]
+    public float distance = 2f;
+   
+    //private int _interactiveMask = 0;
+    //[SerializeField] private Camera _camera = null;
+
     // --------------------------------------------------------------------------------------------
     // Name :   GetText
     // Desc :   Return a string of text to display on the HUD when the player is inspecting this
@@ -129,8 +141,8 @@ public class InteractiveDoor : InteractiveItem
         if (_requiredStates.Count > 0)
         {
             if (ApplicationManager.instance == null) haveRequiredStates = false;
-            //else
-            //    haveRequiredStates = ApplicationManager.instance.AreStatesSet(_requiredStates);
+            else
+                haveRequiredStates = ApplicationManager.instance.AreStatesSet(_requiredStates);
         }
 
         // What text should we return
@@ -164,6 +176,10 @@ public class InteractiveDoor : InteractiveItem
         _playerStats = FindObjectOfType<PlayerStats>();
         // Cache components
         _boxCollider = _collider as BoxCollider;
+      //  _interactiveMask = 1 << LayerMask.NameToLayer("Interactive");
+
+       // useCursor = GameObject.Find("UseCursor");
+       // useCursor.SetActive(false);
 
         // Calculate the open and closed collider sizes and center points
         if (_boxCollider != null)
@@ -232,7 +248,6 @@ public class InteractiveDoor : InteractiveItem
             }
         }
 
-
         // Finally disable colliders of any contents if in the closed position
         if (_contentsMount != null)
         {
@@ -249,32 +264,41 @@ public class InteractiveDoor : InteractiveItem
         // Animation is not currently in progress
         _coroutine = null;
     }
+
+    bool mIsinPerimeter;
+
+  
     private void Update()
     {
-        if ((_playerStats != null) && (mIsinPerimeter)) { _playerStats.ShowMessageText("Press 'Use' to On/Off the Power."); }
 
-        if (Input.GetKeyDown(KeyCode.F) && mIsinPerimeter)
-        {
-            Activate();
-        }
+        //if ((_playerStats != null) && (mIsinPerimeter)) { _playerStats.ShowMessageText("Press 'Use' to On/Off the Power."); }
+
+
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    Activate(this);
+        //}
+
+
+
     }
-    bool mIsinPerimeter;
+
 
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.gameObject.tag == "Player")
     //        mIsinPerimeter = true;
     //}
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-            mIsinPerimeter = false; _playerStats.ShowMessageText("");
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    //if (other.gameObject.tag == "Player")
+    //    //    mIsinPerimeter = false; _playerStats.ShowMessageText("");
+    //}
     // --------------------------------------------------------------------------------------------
     // Name :   Activate
     // Desc :   Called by the character manager to activate the door (open / close) it.
     // --------------------------------------------------------------------------------------------
-    public void Activate()
+    public override void Activate(UseObjects useObjects)
     {
         if (_disableManualActivation) return;
 
@@ -284,8 +308,14 @@ public class InteractiveDoor : InteractiveItem
         if (_requiredStates.Count > 0)
         {
             if (ApplicationManager.instance == null) haveRequiredStates = false;
-     
-         //   haveRequiredStates = ApplicationManager.instance.AreStatesSet(_requiredStates);
+            try
+            {
+                haveRequiredStates = ApplicationManager.instance.AreStatesSet(_requiredStates);
+            }
+            catch
+            {
+
+            }
         }
 
         // Only activate the door if we meet all reuirements
@@ -293,7 +323,8 @@ public class InteractiveDoor : InteractiveItem
         {
             // Stop any animation current running and activate the new animation
             if (_coroutine != null) StopCoroutine(_coroutine);
-           _coroutine = Activate(true,false,0.5f);
+         //  _coroutine = Activate(true,false,0.5f);
+           _coroutine = Activate(_plane.GetSide(useObjects.transform.position));
             StartCoroutine(_coroutine);
         }
         else
@@ -349,7 +380,7 @@ public class InteractiveDoor : InteractiveItem
 
             // Record side we opened from
             _openedFrontside = frontSide;
-            
+
             // Find a sound to play
             if (_doorSounds && AudioManager.instance)
             {
@@ -389,7 +420,7 @@ public class InteractiveDoor : InteractiveItem
                             }
                         }
                     }
-                    
+
                     // If we are already part-way into the animation then we need to start the sound
                     // some way from the beginning
                     float playbackOffset = 0;
@@ -431,20 +462,15 @@ public class InteractiveDoor : InteractiveItem
                     _openColliderCenter = new Vector3(_closedColliderCenter.x, _closedColliderCenter.y, _closedColliderCenter.z - offset);
                     break;
             }
-            try
-            {
-                if (_offsetCollider) _boxCollider.center = _openColliderCenter;
-                _boxCollider.size = _openColliderSize;
-            }
-            catch 
-            {
 
-            }
+            if (_offsetCollider) _boxCollider.center = _openColliderCenter;
+           //     _boxCollider.size = _openColliderSize;
+
             // If StartAnimTime is non-zero we need to let some of the sound play before we start animating
             // the door so let's chew up that time here.
             if (startAnimTime > 0.0f)
                 yield return new WaitForSeconds(startAnimTime);
-            
+
             // Set the starting time of the animation
             time = duration * _normalizedTime;
 
@@ -458,7 +484,7 @@ public class InteractiveDoor : InteractiveItem
                 {
                     if (door != null && door.Transform != null)
                     {
-                       
+
                         // Calculate new position and local rotation
                         door.Transform.position = Vector3.Lerp(door.ClosedPosition, door.OpenPosition, _normalizedTime);
                         door.Transform.localRotation = door.ClosedRotation * Quaternion.Euler(frontSide ? door.Rotation * _normalizedTime : -door.Rotation * _normalizedTime);
@@ -518,10 +544,10 @@ public class InteractiveDoor : InteractiveItem
 
             // Find a sound to play
             if (_doorSounds && AudioManager.instance)
-            { 
+            {
                 // Stop any previous animaton sound that might be playing
                 AudioManager.instance.StopSound(_oneShotSoundID);
-                
+
                 // Fetch a sound from the open bank
                 clip = _doorSounds[autoClosing ? 3 : 1];
                 if (clip)
@@ -567,7 +593,7 @@ public class InteractiveDoor : InteractiveItem
 
             if (startAnimTime > 0.0f)
                 yield return new WaitForSeconds(startAnimTime);
-            
+
             // Set the starting time
             time = duration * _normalizedTime;
 
@@ -580,7 +606,7 @@ public class InteractiveDoor : InteractiveItem
                 {
                     if (door != null && door.Transform != null)
                     {
-                       
+
                         door.Transform.position = Vector3.Lerp(door.OpenPosition, door.ClosedPosition, _normalizedTime);
                         door.Transform.localRotation = Quaternion.Lerp(door.OpenRotation, door.ClosedRotation, _normalizedTime);
                     }
@@ -599,13 +625,14 @@ public class InteractiveDoor : InteractiveItem
             }
 
 
-            _boxCollider.size = _closedColliderSize;
-            _boxCollider.center = _closedColliderCenter;
+        //    _boxCollider.size = _closedColliderSize;
+         //   _boxCollider.center = _closedColliderCenter;
         }
 
         _normalizedTime = 0.0f;
         _coroutine = null;
         yield break;
+
     }
 
     // --------------------------------------------------------------------------------------------
@@ -614,52 +641,42 @@ public class InteractiveDoor : InteractiveItem
     // --------------------------------------------------------------------------------------------
     protected void OnTriggerEnter(Collider other)
     {
-     
-        if (!_autoOpen || !_isClosed)
+       if (!_autoOpen || !_isClosed) return;
+      //  if (_autoOpen ==true) return;
+        bool haveRequiredStates = true;
+        if (_requiredStates.Count > 0)
         {
-                if (other.gameObject.tag == "Player")
-                   mIsinPerimeter = true;
-            return;
+            if (ApplicationManager.instance == null) haveRequiredStates = false;
+            else
+                haveRequiredStates = ApplicationManager.instance.AreStatesSet(_requiredStates);
+        }
+
+        // Only activate the door if we meet all reuirements
+        if (haveRequiredStates && HaveRequiredInvItems())
+        {
+         
+                if (_coroutine != null) StopCoroutine(_coroutine);
+
+                _coroutine = Activate(_plane.GetSide(other.transform.position));
+            
+                StartCoroutine(_coroutine);
+                        
         }
         else
         {
-            mIsinPerimeter = false;
-
-        
-            bool haveRequiredStates = true;
-            if (_requiredStates.Count > 0)
+            // We are not allowed to activate this door so play its Can't Activate sound
+            if (_doorSounds && AudioManager.instance)
             {
-                if (ApplicationManager.instance == null) haveRequiredStates = false;
-                else
-                    haveRequiredStates = ApplicationManager.instance.AreStatesSet(_requiredStates);
-            }
-        
-            // Only activate the door if we meet all reuirements
-            if (haveRequiredStates && HaveRequiredInvItems())
-            {
-            
-                if (_coroutine != null) StopCoroutine(_coroutine);
-                _coroutine = Activate(_plane.GetSide(other.transform.position));
-                StartCoroutine(_coroutine);
-              
-            }
-            else
-            {
-                // We are not allowed to activate this door so play its Can't Activate sound
-                if (_doorSounds && AudioManager.instance)
+                // Fetch a sound from the open bank
+                AudioClip clip = _doorSounds[2];
+                if (clip)
                 {
-                 
-                    // Fetch a sound from the open bank
-                    AudioClip clip = _doorSounds[2];
-                    if (clip)
-                    {
-                        _oneShotSoundID = AudioManager.instance.PlayOneShotSound(_doorSounds.audioGroup,
-                                                           clip,
-                                                           transform.position,
-                                                           _doorSounds.volume,
-                                                           _doorSounds.spatialBlend,
-                                                           _doorSounds.priority);
-                    }
+                    _oneShotSoundID = AudioManager.instance.PlayOneShotSound(_doorSounds.audioGroup,
+                                                       clip,
+                                                       transform.position,
+                                                       _doorSounds.volume,
+                                                       _doorSounds.spatialBlend,
+                                                       _doorSounds.priority);
                 }
             }
         }

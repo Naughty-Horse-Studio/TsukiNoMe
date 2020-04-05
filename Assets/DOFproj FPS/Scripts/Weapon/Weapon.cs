@@ -462,8 +462,10 @@ namespace DOFprojFPS
                 if (hit.collider.GetComponent<NPC>())
                     hit.collider.GetComponent<NPC>().GetHit(meleeDamagePoints, this.transform);
 
+                if (hit.collider.GetComponent<Turret>())
+                    hit.collider.GetComponent<Turret>().ApplyHit(meleeDamagePoints);
 
-             //   HitParticlesFXManager(hit);
+                //   HitParticlesFXManager(hit);
 
                 if (hit.collider.tag =="HeadShot")
                 {
@@ -571,6 +573,9 @@ namespace DOFprojFPS
             
             if (hit.collider.GetComponent<ZombieNPC>())
                 hit.collider.GetComponent<ZombieNPC>().ApplyHit(Random.Range(damageMin, damageMax));
+
+            if (hit.collider.GetComponent<Turret>())
+                hit.collider.GetComponent<Turret>().ApplyHit(Random.Range(damageMin, damageMax));
         }
 
         public void ReloadBegin()

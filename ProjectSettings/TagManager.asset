@@ -19,6 +19,7 @@ TagManager:
   - Loot
   - HeadShot
   - Interactive
+  - Recording
   - Flash Light
   layers:
   - Default

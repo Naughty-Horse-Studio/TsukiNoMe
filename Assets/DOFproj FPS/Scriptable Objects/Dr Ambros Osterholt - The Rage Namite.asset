@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e06820a90d14a444a308975f13a8a10, type: 3}
+  m_Name: Dr Ambros Osterholt - The Rage Namite
+  m_EditorClassIdentifier: 
+  _singleton: 1
+  _pickupText: Press 'Use' to Pickup
+  _inventoryName: Audio Log
+  _inventoryImage: {fileID: 0}
+  _inventoryAction: 0
+  _InventoryActionText: 
+  _replacementItem: {fileID: 0}
+  _collectableItem: {fileID: 0}
+  _invDescription: 
+  _category: 4
+  _audio: {fileID: 11400000, guid: 37c2f6540de547f47b6445d7db337380, type: 2}
+  _person: Dr Ambros Osterholt
+  _subject: The Rage Namite
+  _image: {fileID: 2800000, guid: 678247b33124a3c49b2137b55ef008bd, type: 3}
+  _stateKeys: []
+  _captions:
+  - Time: 1.5
+    Text: "This is Dr Ambros Osterholt, Log Entry 24 for the Center of Rage Research\r\n"
+  - Time: 9.2
+    Text: "My opinions no longer hold with that of the Status Quo. I no longer believe
+      that The Rage was some bungled attempt by \xC9lan Vital  Pharmaceuticals to
+      try and create a version two of their Regen Nanite.\r\n"
+  - Time: 25
+    Text: "The Regen Nanite was a clever little blighter but it was still just a tiny
+      machine...a computer that worked at the molecular level to keep the human body
+      in prime condition.\r\n"
+  - Time: 38.5
+    Text: "The Rage Nanite is not a machine at all. I truly believe it is a biological
+      entity!\r\n"
+  - Time: 46
+    Text: "A creature with a will of its own and the ability to replicate at an alarming
+      rate once introduced to the human bloodstream. \r\n"
+  - Time: 55
+    Text: "There is no way \xC9lan Vital or any other such company could create such
+      a thing.\r\n"
+  - Time: 62
+    Text: "At extremely magnified levels the look of this creature is truly terrifying.
+      They look like aggressive little insects, in-fact....we now refer to them around
+      here as being Na-MITES instead of Nanites...ha....that was my idea.\r\n"
+  - Time: 82
+    Text: "Is it at least possible that the Rage Namite is of extra-terrestrial origin?\r\n"
+  - Time: 90
+    Text: "Something that came down on a stray fragment of rock...or may be...even
+      sub-terrestrial?\r\n"
+  - Time: 97.5
+    Text: Let's face it, there is so much about the world beneath our feet and at
+      the bottom of our deepest ocean trenches that we are yet to discover.
+  - Time: 106
+    Text: "Something we should further consider I believe.\r\n"
+  - Time: 111
+    Text: "Dr Ambros Osterholt, Log Entry 24....Signing Off\r\n"

@@ -15146,6 +15146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 2
+  _playerStats: {fileID: 5969608178214623925}
+  _camera: {fileID: 5969608177107488693}
+  _autoPlayOnPickup: 1
+  _audioRecordings: []
 --- !u!114 &5969608177107488697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30421,6 +30425,7 @@ MonoBehaviour:
   _messagesDisplay: {fileID: 5969608176425283028}
   _missionText: {fileID: 1232605762236094288}
   _missionTextDisplayTime: 3
+  _camera: {fileID: 5969608177107488693}
   _flashLight: {fileID: 475481751}
   _flashlightOnAtStart: 1
   playerPosition: {x: 0, y: 0, z: 0}

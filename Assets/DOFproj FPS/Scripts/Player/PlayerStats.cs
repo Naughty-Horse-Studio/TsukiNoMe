@@ -1,10 +1,10 @@
 ﻿/// Deacon of Freedom Development (2020) v1
 /// If you have any questions feel free to write me at email --- Phil-James_Lapuz@outlook.com ---
-
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using DOFprojFPS;
 namespace DOFprojFPS
 {
     /// <summary>
@@ -13,7 +13,7 @@ namespace DOFprojFPS
     /// Death and Respawn methods works in same way but in oposite direction
     /// </summary>
 
-    public enum ScreenFadeType { FadeIn, FadeOut }
+    public enum ScreenFadeType2 { FadeIn, FadeOut }
 
     public class PlayerStats : MonoBehaviour
     {
@@ -59,6 +59,7 @@ namespace DOFprojFPS
         [SerializeField] private Text _messagesDisplay = null;
         [SerializeField] private Text _missionText = null;
         [SerializeField] private float _missionTextDisplayTime = 3.0f;
+        [SerializeField] private Camera _camera = null;
 
         [SerializeField] private GameObject _flashLight = null;
         [SerializeField] private bool _flashlightOnAtStart = true;
@@ -79,6 +80,7 @@ namespace DOFprojFPS
         private int _interactiveMask = 0;
 
         private InputManager input;
+
         #region utility objects
         private Rigidbody playerRigidbody;
         private FPSController controller;
@@ -113,7 +115,7 @@ namespace DOFprojFPS
 
             _collider = GetComponent<Collider>();
             _gameSceneManager = GameSceneManager.instance;
-
+            _interactiveMask = 1 << LayerMask.NameToLayer("Interactive");
             cameraHolder = GameObject.Find("Camera Holder").GetComponent<Transform>();
 
             isPlayerDead = false;
@@ -129,16 +131,16 @@ namespace DOFprojFPS
             playerBody = FindObjectOfType<Body>().gameObject;
 
 
-            if (_flashLight)
-                _flashLight.SetActive(_flashlightOnAtStart);
-
             //if (_gameSceneManager != null)
             //{
             //    PlayerInfo info = new PlayerInfo();
+            //    info.camera = _camera;
+            //    info.playerStats = this;
             //    info.collider = _collider;
             //   _gameSceneManager.RegisterPlayerInfo(_collider.GetInstanceID(), info);
             //}
-
+            if (_flashLight)
+                _flashLight.SetActive(_flashlightOnAtStart);
 
         }
 
@@ -170,6 +172,7 @@ namespace DOFprojFPS
                 health = 100;
             }
 
+           // HitObjectPriority();
             WritePlayerTransform();
             ConsumableManager(useConsumeSystem);
             DrawHealthStats();
@@ -182,13 +185,14 @@ namespace DOFprojFPS
                 if (_flashLight)
                     _flashLight.SetActive(!_flashLight.activeSelf);
             }
+           
         }
         public void DoLevelComplete()
         {
             if (controller)
                 controller.freezeMovement = true;
 
-              Fade(4.0f, ScreenFadeType.FadeOut);
+              Fade(4.0f, ScreenFadeType2.FadeOut);
               ShowMissionText("Mission Completed");
                //_playerStats.Invalidate(this);                             //actually this is for Health & Stamina , we dont need this anymore.
             
@@ -211,25 +215,27 @@ namespace DOFprojFPS
             if (controller)
                 controller.freezeMovement = true;
 
-            Fade(4.0f, ScreenFadeType.FadeOut);
+            Fade(4.0f, ScreenFadeType2.FadeOut);
              ShowMissionText("Mission Failed");
-               // _playerHUD.Invalidate(this);
-           
+            // _playerHUD.Invalidate(this);
 
-          Invoke("GameOver", 4.0f);
+            if (_flashLight)
+                _flashLight.SetActive(!_flashLight.activeSelf);
+
+            Invoke("GameOver", 4.0f);
         }
-        public void Fade(float seconds, ScreenFadeType direction)
+        public void Fade(float seconds, ScreenFadeType2 direction)
         {
             if (_coroutine != null) StopCoroutine(_coroutine);
             float targetFade = 0.0f; ;
 
             switch (direction)
             {
-                case ScreenFadeType.FadeIn:
+                case ScreenFadeType2.FadeIn:
                     targetFade = 0.0f;
                     break;
 
-                case ScreenFadeType.FadeOut:
+                case ScreenFadeType2.FadeOut:
                     targetFade = 1.0f;
                     break;
             }
@@ -427,7 +433,7 @@ namespace DOFprojFPS
             else
                 return;
         }
-        
+
         void WritePlayerTransform()
         {
             playerPosition = gameObject.transform.position;

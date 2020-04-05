@@ -60,6 +60,10 @@ namespace DOFprojFPS
 
             foreach (Collider collider in colliders)
             {
+                if (collider.GetComponent<Turret>())
+                {
+                    collider.GetComponent<Turret>().ApplyHit((int)damage);
+                }
 
                 if (collider.GetComponent<NPC>())
                 {
