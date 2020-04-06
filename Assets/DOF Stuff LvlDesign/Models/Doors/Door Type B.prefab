@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 33890937286033942}
   - component: {fileID: 23754952517037376}
   - component: {fileID: 4602518262980025194}
-  - component: {fileID: 1923504489627463871}
   m_Layer: 26
   m_Name: Door7
-  m_TagString: Interactive
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,47 +91,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.012700481, y: 0.0011182597, z: 0.01973116}
   m_Center: {x: -0.0063502407, y: -0.00012720111, z: -9.313229e-10}
---- !u!114 &1923504489627463871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465916784563294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b188588aa5fb89c4abc1caf8bc7c8970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _priority: 0
-  _isClosed: 1
-  _isTwoWay: 0
-  _autoOpen: 0
-  _autoClose: 0
-  _autoCloseDelay: {x: 5, y: 5}
-  _disableManualActivation: 0
-  _colliderLengthOpenScale: 1.7
-  _offsetCollider: 1
-  _contentsMount: {fileID: 0}
-  _localForwardAxis: 1
-  _requiredStates: []
-  _requiredItems: []
-  _openedHintText: 'Door: Press ''Use'' to close'
-  _closedHintText: 'Door: Press ''Use'' to open'
-  _cantActivateHintText: 'Door: It''s Locked'
-  _doors:
-  - Transform: {fileID: 4026999883846776}
-    Rotation: {x: 0, y: 0, z: -90}
-    Movement: {x: 0, y: 0, z: 0}
-    ClosedRotation: {x: 0, y: 0, z: 0, w: 0}
-    OpenRotation: {x: 0, y: 0, z: 0, w: 0}
-    OpenPosition: {x: 0, y: 0, z: 0}
-    ClosedPosition: {x: 0, y: 0, z: 0}
-  _doorSounds: {fileID: 11400000, guid: 542a1143d66e2b44bb930cfbed704271, type: 2}
-  _audioPunchInPunchOutDatabase: {fileID: 11400000, guid: 0f125cf2a5f776342a96d81ffd078ac8,
-    type: 2}
-  _playerStats: {fileID: 0}
-  distance: 2
 --- !u!1 &1609701429868338
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,9 +101,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4884103761672274}
   - component: {fileID: 5908081369717921233}
+  - component: {fileID: 4331578762776109708}
   m_Layer: 26
   m_Name: Door Type B
-  m_TagString: Interactive
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 1609701429868338}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -24.382334, y: 0.2626499, z: -20.017204}
-  m_LocalScale: {x: 0.8221112, y: 0.8221112, z: 0.8221112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4026999883846776}
   m_Father: {fileID: 0}
@@ -178,3 +137,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5942717, y: 0.65608853, z: 2.2380998}
   m_Center: {x: -0.7514453, y: -0.06105469, z: -0.012656808}
+--- !u!114 &4331578762776109708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609701429868338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b188588aa5fb89c4abc1caf8bc7c8970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _priority: 0
+  _isClosed: 1
+  _isTwoWay: 1
+  _autoOpen: 0
+  _autoClose: 1
+  _autoCloseDelay: {x: 5, y: 5}
+  _disableManualActivation: 0
+  _colliderLengthOpenScale: 1.7
+  _offsetCollider: 1
+  _contentsMount: {fileID: 0}
+  _localForwardAxis: 1
+  _requiredStates: []
+  _requiredItems: []
+  _openedHintText: 'Door: Press ''Use'' to close'
+  _closedHintText: 'Door: Press ''Use'' to open'
+  _cantActivateHintText: 'Door: It''s Locked'
+  _doors:
+  - Transform: {fileID: 4026999883846776}
+    Rotation: {x: 0, y: 0, z: 90}
+    Movement: {x: 0, y: 0, z: 0}
+    ClosedRotation: {x: 0, y: 0, z: 0, w: 0}
+    OpenRotation: {x: 0, y: 0, z: 0, w: 0}
+    OpenPosition: {x: 0, y: 0, z: 0}
+    ClosedPosition: {x: 0, y: 0, z: 0}
+  _doorSounds: {fileID: 11400000, guid: 542a1143d66e2b44bb930cfbed704271, type: 2}
+  _audioPunchInPunchOutDatabase: {fileID: 11400000, guid: 0f125cf2a5f776342a96d81ffd078ac8,
+    type: 2}
+  _playerStats: {fileID: 0}
