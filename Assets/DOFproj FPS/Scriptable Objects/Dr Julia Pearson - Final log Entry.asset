@@ -30,7 +30,11 @@ MonoBehaviour:
   - Time: 40
     Key: DOOR UNLOCKED
     Value: TRUE
-    UIMessage: Access Code Learned
+    UIMessage: KEY FOB Learned
+  - Time: 76
+    Key: ACCESSCODE
+    Value: TRUE
+    UIMessage: Elevator AccessCode Learned
   _captions:
   - Time: 1
     Text: "This is Dr Julia Pearson for the Center of Rage Research. I fear this will

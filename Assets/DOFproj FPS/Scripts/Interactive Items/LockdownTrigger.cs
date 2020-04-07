@@ -102,8 +102,10 @@ public class LockdownTrigger : MonoBehaviour
 					// Turn off UI elements
 					ResetSoundAndUI ();
 
-					// Change Hint Text to show success
-					if (_hintText) _hintText.text = "Successful Deactivation";
+                    OnEnable();
+
+                    // Change Hint Text to show success
+                    if (_hintText) _hintText.text = "Successful Deactivation";
 
 					// Shutdown lockdown
 					_applicationManager.SetGameState( "LOCKDOWN", "FALSE"); 

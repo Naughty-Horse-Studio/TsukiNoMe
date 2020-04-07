@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2430027908648758732}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Generator
-  m_TagString: Untagged
+  m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2430025526652445282}
   - component: {fileID: 2344708146910619648}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Public Announcement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2424695895065449316}
   - component: {fileID: 2317528668375868414}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Light Off
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,8 +209,8 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 4.03
-  m_Range: 2.8
+  m_Intensity: 2.35
+  m_Range: 2.01
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -268,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2425166250565535860}
   - component: {fileID: 2317103947107443994}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Light On
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,8 +300,8 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 0.33282873, g: 0.83823526, b: 0.4199678, a: 1}
-  m_Intensity: 4.03
-  m_Range: 2.8
+  m_Intensity: 3.46
+  m_Range: 1.89
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -361,9 +361,9 @@ GameObject:
   - component: {fileID: 2440745179720140396}
   - component: {fileID: 2448295192340699134}
   - component: {fileID: 2376740825548767676}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,9 +456,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2430187393830831804}
   - component: {fileID: 2345322406811169092}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Timeline
-  m_TagString: Untagged
+  m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -584,7 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2430034903743658280}
   - component: {fileID: 2345583864096277622}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Engine Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,9 +713,9 @@ GameObject:
   - component: {fileID: 2430117373353608606}
   - component: {fileID: 2395936216536072898}
   - component: {fileID: 2319896853424095282}
-  m_Layer: 15
+  m_Layer: 26
   m_Name: Switch Trigger
-  m_TagString: Untagged
+  m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -764,11 +764,15 @@ MonoBehaviour:
   _activateStates:
   - Key: POWER
     Value: TRUE
+  - Key: GENERATOR UNLOCKED
+    Value: TRUE
   _deactivateStates:
   - Key: POWER
     Value: FALSE
   - Key: LOCKDOWN
     Value: TRUE
+  - Key: GENERATOR UNLOCKED
+    Value: FALSE
   _stateNotSetText: NOT USED
   _stateSetText: 'Power Generator : Not Running'
   _ObjectActiveText: 'Power Generator : Running'
@@ -811,7 +815,6 @@ MonoBehaviour:
   - {fileID: 2425856315644717728}
   - {fileID: 0}
   _playerStats: {fileID: 0}
-  statplayerText: {fileID: 0}
 --- !u!1 &2426631673464769362
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,9 +826,10 @@ GameObject:
   - component: {fileID: 2424745396442941286}
   - component: {fileID: 2439832272598160504}
   - component: {fileID: 2448284887169188032}
-  m_Layer: 0
+  - component: {fileID: 2425634625022243971}
+  m_Layer: 26
   m_Name: Generator
-  m_TagString: Untagged
+  m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -889,6 +893,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2425634625022243971
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426631673464769362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 136.24968, y: 203.76295, z: 311.0696}
+  m_Center: {x: -0.00048907264, y: 98.79072, z: 5.702663}
 --- !u!1 &2427420038597410690
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +917,7 @@ GameObject:
   - component: {fileID: 2429846952741596850}
   - component: {fileID: 2440818688105605110}
   - component: {fileID: 2448301409581934310}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -24,10 +24,10 @@ public class InteractiveKeypad : InteractiveItem
 
 		string powerState 		= appDatabase.GetGameState("POWER");
 		string lockdownState	= appDatabase.GetGameState("LOCKDOWN");
-	//	string accessCodeState	= appDatabase.GetGameState("ACCESSCODE");
+        string accessCodeState = appDatabase.GetGameState("ACCESSCODE");
 
-		// If we have not turned on the power
-		if ( string.IsNullOrEmpty( powerState ) || !powerState.Equals("TRUE"))
+        // If we have not turned on the power
+        if ( string.IsNullOrEmpty( powerState ) || !powerState.Equals("TRUE"))
 		{
 			return "Keypad : No Power";
 		}
@@ -38,14 +38,14 @@ public class InteractiveKeypad : InteractiveItem
 			return "Keypad : Under Lockdown";
 		}
 		else
-		// or we don't have the access code yet
-		//if ( string.IsNullOrEmpty( accessCodeState ) || !accessCodeState.Equals("TRUE"))
-		//{
-		//	return "Keypad : Access Code Required";
-		//}
+        // or we don't have the access code yet
+        if (string.IsNullOrEmpty(accessCodeState) || !accessCodeState.Equals("TRUE"))
+        {
+            return "Keypad : Access Code Required";
+        }
 
-		// We have everything we need
-		return "Keypad";
+        // We have everything we need
+        return "Keypad";
 	}
 
     bool mIsinPerimeter;
@@ -80,30 +80,68 @@ public class InteractiveKeypad : InteractiveItem
     }
     private void Update()
     {
-      
-        if ((_mplayerStats.gatePass == true) && (mIsinPerimeter))
+        if (_isActivated) return;
+
+        if (mIsinPerimeter)
         {
-           
+            ApplicationManager appDatabase = ApplicationManager.instance;
+            if (!appDatabase) return;
+
+            string powerState = appDatabase.GetGameState("POWER");
+            string lockdownState = appDatabase.GetGameState("LOCKDOWN");
+            string accessCodeState = appDatabase.GetGameState("ACCESSCODE");
+
+            // If we have not turned on the power
+            if (string.IsNullOrEmpty(powerState) || !powerState.Equals("TRUE"))
+            {
+                _mplayerStats.ShowMessageText("Keypad : No Power");
+                return;
+            }
+            else
+            // Or we have not deactivated lockdown
+            if (string.IsNullOrEmpty(lockdownState) || !lockdownState.Equals("FALSE"))
+            {
+                _mplayerStats.ShowMessageText("Keypad : Under Lockdown");
+                return;
+            }
+            else
+            // or we don't have the access code yet
+            if (string.IsNullOrEmpty(accessCodeState) || !accessCodeState.Equals("TRUE"))
+            {
+                _mplayerStats.ShowMessageText("Keypad : Access Code Required");
+                return; 
+            }
+
+
             if (_mplayerStats.gatePass == true)
             {
-                _mplayerStats.ShowMessageText("Press 'Use' to Scan the ID Pass.");
-               // statplayerText.text = "Press 'Use' to Scan the ID Pass.";
+                _mplayerStats.ShowMessageText("Press 'Use' to Operate the elevator.");
+                // statplayerText.text = "Press 'Use' to Scan the ID Pass.";
+                if (Input.GetButton("Use"))
+                {
+
+                    Activate();
+                }
+            }
+            else if (_mplayerStats.gatePass == false)
+            {
+                _mplayerStats.ShowMessageText("Press 'Inventory' and get your COVID-19 vaccine shot.");
+                //  statplayerText.text = "Press 'Inventory' to use the ID Pass.";
             }
             else
             {
-                _mplayerStats.ShowMessageText("Press 'Inventory' to use the ID Pass.");
-                //  statplayerText.text = "Press 'Inventory' to use the ID Pass.";
+                string _gText = GetText();
+                _mplayerStats.ShowMessageText(_gText);
             }
-         
-            if (Input.GetButton("Use"))
-            {
-               
-                Activate();
-            }
+
+
+        
         }
+      
 
 
-     
+
+
     }
     public void Activate()
 	{
@@ -118,12 +156,12 @@ public class InteractiveKeypad : InteractiveItem
      
         string powerState 		= appDatabase.GetGameState("POWER");
 		string lockdownState	= appDatabase.GetGameState("LOCKDOWN");
-		//string accessCodeState	= appDatabase.GetGameState("ACCESSCODE");
+		string accessCodeState	= appDatabase.GetGameState("ACCESSCODE");
 
 		if ( string.IsNullOrEmpty( powerState ) || !powerState.Equals("TRUE")) 				return;
 		if ( string.IsNullOrEmpty( lockdownState ) || !lockdownState.Equals("FALSE"))		return;
-        //	if ( string.IsNullOrEmpty( accessCodeState ) || !accessCodeState.Equals("TRUE"))	return;
-     
+        if (string.IsNullOrEmpty(accessCodeState) || !accessCodeState.Equals("TRUE")) return;
+
         // Delay the actual animation for the desired number of seconds
         StartCoroutine ( DoDelayedActivation());
     
