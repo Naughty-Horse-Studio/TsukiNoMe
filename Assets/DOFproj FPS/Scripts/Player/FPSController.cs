@@ -65,11 +65,14 @@ namespace DOFprojFPS
         private void OnEnable()
         {
             controllerRigidbody = GetComponent<Rigidbody>();
-            controllerCollider = GetComponent<CapsuleCollider>();
+            //controllerCollider = GetComponent<CapsuleCollider>();
+            controllerCollider = this.gameObject.transform.GetChild(2).GetChild(0).GetComponent<CapsuleCollider>();
 
-            defaultColliderHeight = GetComponent<CapsuleCollider>().height;
+            //defaultColliderHeight = GetComponent<CapsuleCollider>().height;
+            defaultColliderHeight = this.gameObject.transform.GetChild(2).GetChild(0).GetComponent<CapsuleCollider>().height;
 
-            distanceToGround = GetComponent<CapsuleCollider>().bounds.extents.y;
+            //distanceToGround = GetComponent<CapsuleCollider>().bounds.extents.y;
+            distanceToGround = this.gameObject.transform.GetChild(2).GetChild(0).GetComponent<CapsuleCollider>().bounds.extents.y;
             weaponHolderAnimator = GameObject.Find("Weapon holder").GetComponent<Animator>();
 
             inputManager = FindObjectOfType<InputManager>();

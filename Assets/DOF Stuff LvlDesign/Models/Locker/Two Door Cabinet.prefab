@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b188588aa5fb89c4abc1caf8bc7c8970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _priority: 0
+  _priority: 5
   _isClosed: 1
   _isTwoWay: 0
   _autoOpen: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b188588aa5fb89c4abc1caf8bc7c8970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _priority: 0
+  _priority: 10
   _isClosed: 1
   _isTwoWay: 0
   _autoOpen: 0

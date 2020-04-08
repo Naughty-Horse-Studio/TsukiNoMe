@@ -2521,6 +2521,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4915775375145899396, guid: b7901f3bd2893f840a7aa41ad1c70e5b,
+        type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5122964980294329046, guid: b7901f3bd2893f840a7aa41ad1c70e5b,
         type: 3}
       propertyPath: curretTarget
