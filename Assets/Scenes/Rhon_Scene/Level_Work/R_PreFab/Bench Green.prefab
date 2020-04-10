@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1801409756536809254}
   - component: {fileID: 5700027342894693948}
   - component: {fileID: 8105716927683671591}
+  - component: {fileID: 1535874128103113627}
   m_Layer: 0
   m_Name: Bench Green
   m_TagString: Untagged
@@ -92,3 +93,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300122, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+--- !u!208 &1535874128103113627
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472556510205026922}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.007, y: 0.002, z: 0.003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.003}
+  m_TimeToStationary: 0.5

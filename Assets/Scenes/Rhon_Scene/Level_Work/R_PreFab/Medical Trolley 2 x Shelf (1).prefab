@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 2314459630864374484}
   - component: {fileID: 7273596174755026920}
   - component: {fileID: 6865063515193629282}
+  - component: {fileID: 3988129825178713906}
   m_Layer: 0
   m_Name: Medical Trolley 2 x Shelf (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3528723435156409844
 Transform:
@@ -94,6 +95,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300066, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+--- !u!208 &3988129825178713906
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487161355966436105}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.003, y: 0.0050000004, z: 0.007}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -0.003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1984053095933085641
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +128,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3276971554283463875
 Transform:
@@ -203,7 +220,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7851768823857745723
 Transform:

@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 5843291253285891302}
   - component: {fileID: 9114041868613183113}
   - component: {fileID: 7138277719078205147}
+  - component: {fileID: 6215029445047369450}
   m_Layer: 0
   m_Name: IV Stand
   m_TagString: Untagged
@@ -118,15 +119,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6108824321799607566}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -111.29473, y: -1.9180464, z: 47.838203}
-  m_LocalScale: {x: 0.022096584, y: 0.022096591, z: 0.022096591}
+  m_LocalScale: {x: 0.015728569, y: 0.015728582, z: 0.015728582}
   m_Children:
   - {fileID: 7742143397187335933}
   - {fileID: 4382379459169662985}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!33 &5843291253285891302
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -187,6 +188,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300234, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+--- !u!208 &6215029445047369450
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108824321799607566}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 23.318, y: 16.140001, z: 37.134003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.16600001, y: -0.006, z: 37.133003}
+  m_TimeToStationary: 0.5
 --- !u!1 &8209565020932866764
 GameObject:
   m_ObjectHideFlags: 0

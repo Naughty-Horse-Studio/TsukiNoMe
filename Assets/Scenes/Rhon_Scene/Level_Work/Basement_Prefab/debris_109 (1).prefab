@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 3565564049875329110}
   - component: {fileID: 4050413618053525602}
   - component: {fileID: 1057884849183090421}
+  - component: {fileID: 4274383703843160063}
   m_Layer: 0
   m_Name: debris_109 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1563514295657237167
 Transform:
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6009599658484293924}
   m_LocalRotation: {x: 0, y: 0.5202721, z: 0, w: 0.8540006}
   m_LocalPosition: {x: -16.061697, y: -1.3118265, z: 41.639088}
-  m_LocalScale: {x: 0.63291967, y: 0.63291955, z: 0.63291967}
+  m_LocalScale: {x: 0.6329197, y: 0.63291955, z: 0.6329198}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,3 +92,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7351527, y: 0.16692108, z: 1.3342414}
   m_Center: {x: 0.000000029802266, y: -4.6837534e-16, z: 3.330669e-15}
+--- !u!208 &4274383703843160063
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009599658484293924}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.86800003, y: 0.083000004, z: 0.66700006}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 569902792650563458}
   - component: {fileID: 5121202226648799910}
   - component: {fileID: 8909522640135758761}
+  - component: {fileID: 7095369804522788525}
   m_Layer: 0
   m_Name: debris_055 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8369765494874627266
 Transform:
@@ -91,3 +92,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5484464, y: 0.2467688, z: 1.2578086}
   m_Center: {x: -0.0000038146973, y: 0, z: 0.0000019073486}
+--- !u!208 &7095369804522788525
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490025283545271126}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.27400002, y: 0.123, z: 0.629}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

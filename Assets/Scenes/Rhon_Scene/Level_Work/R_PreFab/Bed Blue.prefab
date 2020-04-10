@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 1823127323532150986}
   - component: {fileID: 3743966364019003237}
   - component: {fileID: 3099603158960843284}
+  - component: {fileID: 3118158697717763180}
   m_Layer: 0
   m_Name: Bed Blue
   m_TagString: Untagged
@@ -280,6 +281,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+--- !u!208 &3118158697717763180
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7668884545619288342}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.008, y: 0.015000001, z: 0.007}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &8260999668087548416
 GameObject:
   m_ObjectHideFlags: 0

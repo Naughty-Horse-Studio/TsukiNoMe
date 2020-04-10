@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 3120704047797539744}
   - component: {fileID: 2900480244300087467}
   - component: {fileID: 8333878130166786630}
+  - component: {fileID: 2983868327465687948}
   m_Layer: 0
   m_Name: Bench018 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4441087307261956739
 Transform:
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6958586033765289619}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -7035.313, y: 28.397713, z: -2029.3503}
-  m_LocalScale: {x: 12900, y: 12900, z: 12900}
+  m_LocalScale: {x: 91.332, y: 91.3321, z: 91.3321}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!33 &3120704047797539744
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -92,3 +93,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300518, guid: 24f65ce5f6a70024983f1beba0c8e840, type: 3}
+--- !u!208 &2983868327465687948
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958586033765289619}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.003, y: 0.009000001, z: 0.004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.083000004, y: -0.036000002, z: -0.006}
+  m_TimeToStationary: 0.5

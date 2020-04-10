@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1136827677439893752}
   - component: {fileID: 4496829339481851799}
   - component: {fileID: 4230197720294747431}
+  - component: {fileID: 4339855323289789853}
   m_Layer: 0
   m_Name: Medical Cutains Stand (1)
   m_TagString: Untagged
@@ -93,6 +94,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300050, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+--- !u!208 &4339855323289789853
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469197026783757674}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.014, y: 0.002, z: 0.015000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.006}
+  m_TimeToStationary: 0.5
 --- !u!1 &9124395039701028558
 GameObject:
   m_ObjectHideFlags: 0

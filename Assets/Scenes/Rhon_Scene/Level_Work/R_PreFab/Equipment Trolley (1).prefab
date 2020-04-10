@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 8584896993980726728}
   - component: {fileID: 4171178773047795471}
   - component: {fileID: 7787445655754544295}
+  - component: {fileID: 7259362237498562668}
   m_Layer: 0
   m_Name: Equipment Trolley (1)
   m_TagString: Untagged
@@ -189,6 +190,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300148, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+--- !u!208 &7259362237498562668
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3149918625519250676}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 19.314001, y: 37.704002, z: 16.777}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.12200001, y: -0.15, z: -15.407001}
+  m_TimeToStationary: 0.5
 --- !u!1 &3320054100533283098
 GameObject:
   m_ObjectHideFlags: 0

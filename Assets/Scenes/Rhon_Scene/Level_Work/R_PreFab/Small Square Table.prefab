@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7596502243470167332}
   - component: {fileID: 2424616985226367735}
   - component: {fileID: 4628364537807647304}
+  - component: {fileID: 7336029546366964394}
   m_Layer: 0
   m_Name: Small Square Table
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5622676784845514070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.969, y: -2.653, z: -0}
-  m_LocalScale: {x: 7.189165, y: 7.189169, z: 6.226869}
+  m_LocalScale: {x: 7.189165, y: 7.189169, z: 8.737272}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,3 +93,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300396, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+--- !u!208 &7336029546366964394
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5622676784845514070}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.074, y: 0.056, z: 0.040000003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.039}
+  m_TimeToStationary: 0.5
