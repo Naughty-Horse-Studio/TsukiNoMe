@@ -65,17 +65,30 @@ namespace DOFprojFPS {
                     collider.GetComponent<ObjectHealth>().health -= damage;
                 }
 
-                if (collider.GetComponentInParent<PlayerStats>())
+
+
+
+
+                if (collider.GetComponent<Rigidbody>()!= null)
                 {
-                    Transform _damageSender = GameObject.Find("Player").transform;
-                    _damageSender.GetComponent<PlayerStats>().health -= (int)damage;
-                }
+                    RaycastHit hit;
+                    if(Physics.Raycast(transform.position,collider.transform.position-transform.position,out hit, Mathf.Infinity))
+                    {
+                        if(hit.collider == collider)
+                        {
+                            collider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, damageRadius);
 
+                            //if (collider.GetComponentInParent<PlayerStats>())
+                            //{
+                                Transform _damageSender = GameObject.Find("Player").transform;
+                                _damageSender.GetComponent<PlayerStats>().health -= (int)damage;
+                            //}
+                        }
+                    }
+                
 
+               
 
-                if (collider.GetComponent<Rigidbody>())
-                {
-                    collider.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, damageRadius);
                 }
             }
 
