@@ -80,11 +80,16 @@ namespace DOFprojFPS
                     collider.GetComponent<ObjectHealth>().health -= damage;
                 }
 
-                if (collider.GetComponent<PlayerStats>())
+                //if (collider.GetComponent<PlayerStats>())
+                //{
+                //    collider.GetComponent<PlayerStats>().health -= (int)damage;
+                //}
+                if (collider.GetComponentInParent<PlayerStats>())
                 {
-                    collider.GetComponent<PlayerStats>().health -= (int)damage;
+                    Transform _damageSender = GameObject.Find("Player").transform;
+                    _damageSender.GetComponent<PlayerStats>().health -= (int)damage;
                 }
-                
+
                 if (collider.GetComponent<Rigidbody>())
                 {
                     if(useHit)

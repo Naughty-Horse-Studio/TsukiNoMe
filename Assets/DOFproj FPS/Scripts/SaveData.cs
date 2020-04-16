@@ -39,6 +39,7 @@ namespace DOFprojFPS
         {
             if (Input.GetKeyDown(KeyCode.F5) && !PlayerStats.isPlayerDead)
             {
+                FadeMessage._text.text = "";
                 Save();
                 FadeMessage._text.text = "Game saved";
             }

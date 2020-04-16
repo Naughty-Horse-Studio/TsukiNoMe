@@ -134,6 +134,7 @@ namespace DOFprojFPS
                         agent.SetDestination(player.position);
                         if (Vector3.Distance(transform.position, player.position) < attackDistance)
                         {
+                        
                             //Attack animation have event that call FightHit method to apply damage
                             animator.Play("Attack");
                         }

@@ -113,7 +113,8 @@ namespace DOFprojFPS
                 Invoke("HideMissionText", _missionTextDisplayTime);
             }
 
-            _collider = GetComponent<Collider>();
+            //   _collider = GetComponent<Collider>();
+            _collider = this.gameObject.transform.GetChild(2).GetChild(0).GetComponent<Collider>();
             _gameSceneManager = GameSceneManager.instance;
             _interactiveMask = 1 << LayerMask.NameToLayer("Interactive");
             cameraHolder = GameObject.Find("Camera Holder").GetComponent<Transform>();
@@ -122,7 +123,9 @@ namespace DOFprojFPS
 
             playerRigidbody = GetComponent<Rigidbody>();
             controller = GetComponent<FPSController>();
-            playerCollider = GetComponent<CapsuleCollider>();
+            // playerCollider = GetComponent<CapsuleCollider>();
+            playerCollider = this.gameObject.transform.GetChild(2).GetChild(0).GetComponent<CapsuleCollider>();
+
             weaponManager = FindObjectOfType<WeaponManager>();
             sway = FindObjectOfType<Sway>();
             input = FindObjectOfType<InputManager>();
