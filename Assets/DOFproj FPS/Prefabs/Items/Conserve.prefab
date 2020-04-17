@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1405973529
   title: Conserve
-  description: Something strange Russian conserve. But looks eatable...
+  description: corned beef pinoy conserve. But looks eatable...
   type: 5
   icon: {fileID: 21300000, guid: f67162a9cc2b8d7459b72a06e2f6e2bf, type: 3}
   width: 1
@@ -135,23 +135,15 @@ MonoBehaviour:
   stackSize: 0
   weaponUnloadingItem: {fileID: 0}
   weaponAmmoCount: 0
-  haveScopeAddon: 0
-  scopeImage: {fileID: 0}
-  scopeImageSize: {x: 0, y: 0}
-  scopeImagePosition: {x: 0, y: 0}
-  haveSilencerAddon: 0
-  silencerImage: {fileID: 0}
-  silencerImageSize: {x: 0, y: 0}
-  silencerImagePosition: {x: 0, y: 0}
   onUseEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Item+OnUseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: DOFprojFPS.Item+OnUseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   onPickupEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Item+OnPickupEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: DOFprojFPS.Item+OnPickupEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &1801644241563767904
 MonoBehaviour:

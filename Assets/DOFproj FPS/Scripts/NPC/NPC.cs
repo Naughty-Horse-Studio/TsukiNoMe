@@ -151,6 +151,7 @@ namespace DOFprojFPS
 
             playerHealth = FindObjectOfType<PlayerStats>();
 
+            curretTarget = GameObject.FindGameObjectWithTag("Player").transform;
 
             foreach (Collider collider in GetComponentsInChildren<Collider>())
             {

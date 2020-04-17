@@ -44,7 +44,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionTimer: 3
   explosionForce: 1000
-  damageRadius: 7
+  damageRadius: 5
   damage: 200
   explosionEffects: {fileID: 2460201614167559244, guid: 1138b4548a20d4640b1e6253419cf032,
     type: 3}

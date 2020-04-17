@@ -119,10 +119,26 @@ public class InteractiveDoor : InteractiveItem
     public static bool useState;
     [Tooltip("The distance within which you can open/close Doors.")]
     public float distance = 2f;
-   
-    //private int _interactiveMask = 0;
-    //[SerializeField] private Camera _camera = null;
 
+    [Header("NPC")]
+    [Tooltip("The AI(enemy)to use for the door opening and closing initiate.")]
+    [SerializeField]
+    private GameObject rebel_Prefab;
+    [SerializeField]
+    private int rebel_Enemy_Count;
+
+   [SerializeField]
+    private GameObject zombie_Prefab;
+    [SerializeField]
+    private int zombie_Enemy_Count;
+
+    public Transform[] rebel_SpawnPoints, zombie_SpawnPoints;
+
+
+
+    private int initial_rebel_Count, initial_zombie_Count;
+
+    public float wait_Before_Spawn_Enemies_Time = 3f;
     // --------------------------------------------------------------------------------------------
     // Name :   GetText
     // Desc :   Return a string of text to display on the HUD when the player is inspecting this
@@ -176,10 +192,10 @@ public class InteractiveDoor : InteractiveItem
         _playerStats = FindObjectOfType<PlayerStats>();
         // Cache components
         _boxCollider = _collider as BoxCollider;
-      //  _interactiveMask = 1 << LayerMask.NameToLayer("Interactive");
 
-       // useCursor = GameObject.Find("UseCursor");
-       // useCursor.SetActive(false);
+        initial_rebel_Count = rebel_Enemy_Count;
+        initial_zombie_Count = zombie_Enemy_Count;
+
 
         // Calculate the open and closed collider sizes and center points
         if (_boxCollider != null)
@@ -267,7 +283,66 @@ public class InteractiveDoor : InteractiveItem
 
     bool mIsinPerimeter;
 
-  
+    IEnumerator CheckToSpawnEnemies()
+    {
+        yield return new WaitForSeconds(wait_Before_Spawn_Enemies_Time);
+
+        SpawnRebels();
+
+        SpawnZombies();
+
+    }
+
+    void SpawnRebels()
+    {
+
+        int index = 0;
+
+        for (int i = 0; i < rebel_Enemy_Count; i++)
+        {
+
+            if (index >= rebel_SpawnPoints.Length)
+            {
+                index = 0;
+            }
+
+            Instantiate(rebel_Prefab, rebel_SpawnPoints[index].position, Quaternion.identity);
+
+            index++;
+
+        }
+
+        rebel_Enemy_Count = 0;
+
+    }
+    void SpawnZombies()
+    {
+
+        int index = 0;
+
+        for (int i = 0; i < zombie_Enemy_Count; i++)
+        {
+
+            if (index >= zombie_SpawnPoints.Length)
+            {
+                index = 0;
+            }
+
+            Instantiate(zombie_Prefab, zombie_SpawnPoints[index].position, Quaternion.identity);
+
+            index++;
+
+        }
+
+        zombie_Enemy_Count = 0;
+
+    }
+
+    private void StopSpawning()
+    {
+        StopCoroutine("CheckToSpawnEnemies");
+    }
+
     private void Update()
     {
 
@@ -514,14 +589,19 @@ public class InteractiveDoor : InteractiveItem
                 _coroutine = Activate(frontSide, true, Random.Range(_autoCloseDelay.x, _autoCloseDelay.y));
                 StartCoroutine(_coroutine);
             }
+
+            StartCoroutine("CheckToSpawnEnemies");
+
             yield break;
         }
 
+      
         // The door is open so we wish to close it
         else
         {
             _isClosed = true;
 
+         
             // Cache the door in its open position 
             foreach (InteractiveDoorInfo door in _doors)
             {
@@ -625,8 +705,7 @@ public class InteractiveDoor : InteractiveItem
             }
 
 
-        //    _boxCollider.size = _closedColliderSize;
-         //   _boxCollider.center = _closedColliderCenter;
+         //   StopSpawning();
         }
 
         _normalizedTime = 0.0f;

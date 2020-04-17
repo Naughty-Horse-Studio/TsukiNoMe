@@ -707,7 +707,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 848c05b0a857ad047b052779513cc655, type: 3}
   wanderingSpeed: 0.5
   wanderingTimer: 10
-  wanderingRadius: 5
+  wanderingRadius: 7
   attackDistance: 1.2
   zombieRagdoll: {fileID: 0}
   runSpeed: 2
@@ -715,7 +715,7 @@ MonoBehaviour:
   isWorried: 0
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
-  m_JumpPower: 10
+  m_JumpPower: 20
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
@@ -3435,8 +3435,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visibilityCheckInterval: 0.1
-  FOV: 100
-  detectionRange: 30
+  FOV: 10
+  detectionRange: 5
   targetFraction: 0
   objectsInRange: []
   potentialTargets: []
