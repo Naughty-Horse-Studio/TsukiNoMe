@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Rhon_Scene/Bootstrapper.unity
     guid: f7d2664a780233a42baa83bce7266799
   - enabled: 1
+    path: Assets/morgue scene/Phil_KojimaStyleScene.unity
+    guid: a3c49b4f73804f841b8094c0afe445f5
+  - enabled: 1
     path: Assets/Scenes/Rhon_Scene/Main Menu.unity
     guid: f853bf4faeb31074891a758ac191439f
   - enabled: 1

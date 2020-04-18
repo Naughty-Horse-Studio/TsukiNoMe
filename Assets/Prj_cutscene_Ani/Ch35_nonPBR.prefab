@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 5915381789161301155}
   m_Layer: 0
   m_Name: Ch35_nonPBR
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 5091286470701873078}
   m_Layer: 0
   m_Name: mixamorig:LeftUpLeg
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 4273784752877629177}
   m_Layer: 0
   m_Name: mixamorig:Spine
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -768,9 +768,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5272023268649851355}
   - component: {fileID: 1135460687454382546}
+  - component: {fileID: 5303332458623606245}
   m_Layer: 0
   m_Name: Ch35
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -806,9 +807,9 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2f22ada07f5be71418d2ede89918254e, type: 2}
-  - {fileID: 2100000, guid: e14c44c51af13dc499a6e3457d02ad2c, type: 2}
-  - {fileID: 2100000, guid: 86611e1c755209548b57c3ba9f55fec3, type: 2}
+  - {fileID: 2100000, guid: d3d08900c025ed7489d27671554c13fa, type: 2}
+  - {fileID: 2100000, guid: 37a2553dfa8a2b241a33a8d3e3750b96, type: 2}
+  - {fileID: 2100000, guid: 27bb65b225a9a04408759408ebc5b49b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -905,6 +906,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00082555413, y: -0.1755895, z: 0.01894173}
     m_Extent: {x: 0.8967068, y: 0.9590331, z: 0.2906229}
   m_DirtyAABB: 0
+--- !u!65 &5303332458623606245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747943996531237171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.793701, y: 1.9183341, z: 0.5812605}
+  m_Center: {x: 0.0008433124, y: 0.83682406, z: 0.022378981}
 --- !u!1 &3932697757868150313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1551,7 @@ GameObject:
   - component: {fileID: 1555342363501085246}
   m_Layer: 0
   m_Name: mixamorig:RightUpLeg
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1908,7 +1922,7 @@ GameObject:
   - component: {fileID: 4280523330158668639}
   m_Layer: 0
   m_Name: mixamorig:Hips
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

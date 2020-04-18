@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class MainMenuSceneManager : MonoBehaviour 
 {
-	public void LoadGame ()
+
+    // Use this for initialization
+    public void LoadMenu()
+    {
+        if (ApplicationManager.instance) ApplicationManager.instance.LoadMainMenu();
+    }
+
+
+    public void LoadGame ()
 	{
 		if (ApplicationManager.instance)
 			ApplicationManager.instance.LoadGame();

@@ -7,7 +7,7 @@ public class Bootstrapper : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		if (ApplicationManager.instance) ApplicationManager.instance.LoadMainMenu();
+		if (ApplicationManager.instance) ApplicationManager.instance.LoadIntroMenu();
 	}
 	
 

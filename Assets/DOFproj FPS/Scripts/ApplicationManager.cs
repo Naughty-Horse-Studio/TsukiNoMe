@@ -93,14 +93,18 @@ public class ApplicationManager : MonoBehaviour
 	}
 
 
-	public void LoadMainMenu()
+	public void LoadIntroMenu()
 	{
-		SceneManager.LoadScene("Main Menu");
-	}
+		SceneManager.LoadScene("Phil_KojimaStyleScene"); //Main Menu
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu"); //Main Menu
+    }
 
 
-
-	public void LoadGame()
+    public void LoadGame()
 	{
 		ResetGameStates();
 		SceneManager.LoadScene("Master_Scene");
