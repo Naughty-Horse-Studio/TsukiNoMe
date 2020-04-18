@@ -133,7 +133,7 @@ namespace DOFprojFPS
         #endregion
 
         private InputManager inputManager;
-
+        private Cover cover;
         private void Start()
         {
             animator = GetComponent<Animator>();
@@ -152,6 +152,8 @@ namespace DOFprojFPS
             playerHealth = FindObjectOfType<PlayerStats>();
 
             curretTarget = GameObject.FindGameObjectWithTag("Player").transform;
+
+           // cover = GameObject.FindGameObjectWithTag("Cover").GetComponent<Cover>();
 
             foreach (Collider collider in GetComponentsInChildren<Collider>())
             {
@@ -479,7 +481,7 @@ namespace DOFprojFPS
             this.enabled = false;
         }
 
-        private Cover cover;
+      
         [HideInInspector]
         public Vector3 lookPosition;
         private bool randomTimeGenerated = false;
