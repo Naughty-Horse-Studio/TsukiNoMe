@@ -12,6 +12,7 @@ using UnityEngine;
     public class Turret : MonoBehaviour
     {
     public float health = 100f;
+    private float _mHealth;
     public int maxDamage = 10;
 
     private Transform target;
@@ -67,6 +68,7 @@ using UnityEngine;
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 3f);
+        _mHealth = health;
     }
 
     void UpdateTarget()
@@ -84,12 +86,12 @@ using UnityEngine;
                     nearestEnemy = enemy;
                 }
             }
-
+     
             if (nearestEnemy != null && shortestDistance <= range)
             {
                 target = nearestEnemy.transform;
                 targetEnemy = nearestEnemy.GetComponent<PlayerStats>();
-
+           
 
             }
             else
@@ -115,7 +117,7 @@ using UnityEngine;
     {
      
 
-            if (health > 0)
+            if (_mHealth > 0)
             {
                 if (target == null)
                 {
@@ -140,8 +142,10 @@ using UnityEngine;
                 }
                 else
                 {
-                    if (fireCountdown <= 0f)
+             
+                if (fireCountdown <= 0f)
                     {
+                    
                         Shoot();
                         fireCountdown = 1f / fireRate;
                     }
@@ -151,9 +155,9 @@ using UnityEngine;
             }
             else
             {
-            impactEffect.transform.position = firePoint.position;
-            impactEffect.Play();
-            Death();
+                 impactEffect.transform.position = firePoint.position;
+                 impactEffect.Play();
+                  Death();
             }
 
     }
@@ -165,7 +169,7 @@ using UnityEngine;
     public void ApplyHit(int damage)
     {
        
-        health -= damage;
+        _mHealth -= damage;
     }
     void LockOnTarget()
     {
@@ -200,10 +204,13 @@ using UnityEngine;
 
     void Shoot()
     {
-        if (targetEnemy != null)
-        {
+        if (target != null && _mHealth > 0)
+        { 
+         
             GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+         
 
             if (bullet != null)
                 bullet.Seek(target);
@@ -216,6 +223,8 @@ using UnityEngine;
                 m_AudioSource.clip = m_FireAudioClip;
                 m_AudioSource.Play();
             }
+
+           
         }
 
     }
