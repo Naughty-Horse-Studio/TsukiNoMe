@@ -5,6 +5,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using DOFprojFPS;
+using UnityEngine.PostProcessing;
+
 namespace DOFprojFPS
 {
     /// <summary>
@@ -99,6 +101,10 @@ namespace DOFprojFPS
         IEnumerator _coroutine = null;
         #endregion
 
+        public PostProcessingProfile ppProfile;
+        public bool changeValue;
+
+
         private void Start()
         {
             if (_screenFade)
@@ -134,6 +140,9 @@ namespace DOFprojFPS
             playerBody = FindObjectOfType<Body>().gameObject;
 
 
+          
+          
+            
             //if (_gameSceneManager != null)
             //{
             //    PlayerInfo info = new PlayerInfo();
@@ -143,7 +152,9 @@ namespace DOFprojFPS
             //   _gameSceneManager.RegisterPlayerInfo(_collider.GetInstanceID(), info);
             //}
             if (_flashLight)
-                _flashLight.SetActive(_flashlightOnAtStart);
+                _flashLight.SetActive(_flashlightOnAtStart); ppProfile.vignette.enabled = _flashlightOnAtStart;
+
+
 
         }
 
@@ -186,9 +197,21 @@ namespace DOFprojFPS
             if (Input.GetKeyDown(input.Flashlight))
             {
                 if (_flashLight)
-                    _flashLight.SetActive(!_flashLight.activeSelf);
+                    _flashLight.SetActive(!_flashLight.activeSelf); ppProfile.vignette.enabled = _flashLight.activeSelf;
+
+                // ChangeDepthOfFieldAtRuntime(changeValue);
+
             }
            
+        }
+
+        void ChangeDepthOfFieldAtRuntime(float val)
+        {
+            //copy current "depth of field" settings from the profile into a temporary variable
+            DepthOfFieldModel.Settings deaptoffieldSettings = ppProfile.depthOfField.settings;
+            deaptoffieldSettings.aperture += Time.deltaTime * val;
+            //set the "depth of field" settings in the actual profile to the temp settings with the changed value
+            ppProfile.depthOfField.settings = deaptoffieldSettings;
         }
         public void DoLevelComplete()
         {
