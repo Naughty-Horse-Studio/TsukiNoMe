@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6922227763869806246}
   - component: {fileID: 8701961857948207825}
   - component: {fileID: 1584887538176311702}
-  - component: {fileID: 5041502331038043909}
+  - component: {fileID: 9150220413043652286}
   m_Layer: 0
   m_Name: Single Sink (1)
   m_TagString: Untagged
@@ -79,8 +79,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5041502331038043909
-MeshCollider:
+--- !u!65 &9150220413043652286
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -89,7 +89,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300224, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 38.149666, y: 34.493645, z: 53.47228}
+  m_Center: {x: -0.6929372, y: -0.066696845, z: 26.706362}

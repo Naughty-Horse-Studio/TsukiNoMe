@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 7697116850284359856}
   - component: {fileID: 7042901411335269120}
   - component: {fileID: 3259976109266795800}
-  - component: {fileID: 6620537703952632801}
+  - component: {fileID: 7522993852221711512}
   m_Layer: 0
   m_Name: UltraScanner NotBroken
   m_TagString: Untagged
@@ -174,8 +174,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6620537703952632801
-MeshCollider:
+--- !u!65 &7522993852221711512
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -184,10 +184,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300098, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.008885703, y: 0.01137026, z: 0.0188378}
+  m_Center: {x: 0.000048528727, y: -0.00086450705, z: 0.0009760181}
 --- !u!1 &6363195489783145281
 GameObject:
   m_ObjectHideFlags: 0

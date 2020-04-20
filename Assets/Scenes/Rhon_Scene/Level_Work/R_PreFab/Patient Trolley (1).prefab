@@ -103,8 +103,8 @@ GameObject:
   - component: {fileID: 5680546882109179242}
   - component: {fileID: 8753124798490311667}
   - component: {fileID: 3802838707500818176}
-  - component: {fileID: 5313936050387123337}
   - component: {fileID: 5581886048406793048}
+  - component: {fileID: 1234386915018628454}
   m_Layer: 0
   m_Name: Patient Trolley (1)
   m_TagString: Untagged
@@ -173,20 +173,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5313936050387123337
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7140627092478376237}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300084, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
 --- !u!208 &5581886048406793048
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -203,6 +189,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.001, y: -0.045, z: -0.28500003}
   m_TimeToStationary: 0.5
+--- !u!65 &1234386915018628454
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140627092478376237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5007982, y: 1.3012004, z: 0.6730009}
+  m_Center: {x: 0.0009005985, y: -0.045323692, z: -0.28536952}
 --- !u!1 &8438571685386423425
 GameObject:
   m_ObjectHideFlags: 0

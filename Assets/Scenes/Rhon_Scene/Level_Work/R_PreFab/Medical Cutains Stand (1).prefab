@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 891114001842595336}
   - component: {fileID: 1136827677439893752}
   - component: {fileID: 4496829339481851799}
-  - component: {fileID: 4230197720294747431}
   - component: {fileID: 4339855323289789853}
+  - component: {fileID: 5792544979997795918}
   m_Layer: 0
   m_Name: Medical Cutains Stand (1)
   m_TagString: Untagged
@@ -80,20 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4230197720294747431
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469197026783757674}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300050, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
 --- !u!208 &4339855323289789853
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -110,6 +96,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0.006}
   m_TimeToStationary: 0.5
+--- !u!65 &5792544979997795918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469197026783757674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.028868888, y: 0.004288855, z: 0.029400013}
+  m_Center: {x: -0.0000001101583, y: 0.0000030676001, z: 0.006391082}
 --- !u!1 &9124395039701028558
 GameObject:
   m_ObjectHideFlags: 0

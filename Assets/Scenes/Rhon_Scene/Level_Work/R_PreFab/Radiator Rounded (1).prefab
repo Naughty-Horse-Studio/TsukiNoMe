@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6923848124744183948}
   - component: {fileID: 3881562959517613763}
   - component: {fileID: 7818527181421315520}
-  - component: {fileID: 6225798626809003188}
+  - component: {fileID: 862800151027394676}
   m_Layer: 0
   m_Name: Radiator Rounded (1)
   m_TagString: Untagged
@@ -79,8 +79,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6225798626809003188
-MeshCollider:
+--- !u!65 &862800151027394676
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -89,7 +89,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300478, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 23.403088, y: 55.66802, z: 89.4275}
+  m_Center: {x: -0.00048017502, y: 27.83386, z: 1.8504546}

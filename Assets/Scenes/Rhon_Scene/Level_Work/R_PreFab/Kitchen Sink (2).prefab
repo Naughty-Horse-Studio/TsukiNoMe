@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2371838056696650117}
   - component: {fileID: 8441594702813044855}
   - component: {fileID: 7878386551805406925}
-  - component: {fileID: 1078908184291502838}
+  - component: {fileID: 6258334039348417135}
   m_Layer: 0
   m_Name: Kitchen Cabinet
   m_TagString: Untagged
@@ -79,8 +79,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1078908184291502838
-MeshCollider:
+--- !u!65 &6258334039348417135
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -89,10 +89,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300332, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 120.87396, y: 48.8613, z: 45.490833}
+  m_Center: {x: 0, y: 0.076426506, z: 21.16812}
 --- !u!1 &4456215786845265108
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +103,6 @@ GameObject:
   - component: {fileID: 3401325491490788297}
   - component: {fileID: 8455525161054207446}
   - component: {fileID: 2232888635593448495}
-  - component: {fileID: 1016228759747063668}
   m_Layer: 0
   m_Name: Kitchen Cabinet Door
   m_TagString: Untagged
@@ -171,20 +169,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1016228759747063668
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4456215786845265108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300334, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
 --- !u!1 &4883546584530028365
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +180,6 @@ GameObject:
   - component: {fileID: 5354713990043675634}
   - component: {fileID: 1138117819527577851}
   - component: {fileID: 5593580760812668909}
-  - component: {fileID: 751043902273178589}
   m_Layer: 0
   m_Name: Kitchen Sink Tap Cold
   m_TagString: Untagged
@@ -263,20 +246,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &751043902273178589
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4883546584530028365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300328, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
 --- !u!1 &7125562756261337919
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +257,6 @@ GameObject:
   - component: {fileID: 4897382931070881098}
   - component: {fileID: 8484577928419608327}
   - component: {fileID: 4678771750192112532}
-  - component: {fileID: 1463894678295169990}
   m_Layer: 0
   m_Name: Emblam Fluid001
   m_TagString: Untagged
@@ -356,20 +324,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1463894678295169990
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7125562756261337919}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300336, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
 --- !u!1 &7203835944216827042
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +335,6 @@ GameObject:
   - component: {fileID: 4632013861731859047}
   - component: {fileID: 9057055289712549340}
   - component: {fileID: 4029239219131714144}
-  - component: {fileID: 2761024047179810005}
   m_Layer: 0
   m_Name: Kitchen Sink Tap Hot
   m_TagString: Untagged
@@ -448,20 +401,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2761024047179810005
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7203835944216827042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300330, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
 --- !u!1 &7972367052999534118
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +412,6 @@ GameObject:
   - component: {fileID: 5362431367906925342}
   - component: {fileID: 188205466413503548}
   - component: {fileID: 8165706597733221948}
-  - component: {fileID: 7968590155384621980}
   m_Layer: 0
   m_Name: Rotatable Outlet
   m_TagString: Untagged
@@ -540,20 +478,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7968590155384621980
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7972367052999534118}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300326, guid: ccf949bfb5183994aa392eb2d8ecf02d, type: 3}
 --- !u!1 &8018432554526593167
 GameObject:
   m_ObjectHideFlags: 0
