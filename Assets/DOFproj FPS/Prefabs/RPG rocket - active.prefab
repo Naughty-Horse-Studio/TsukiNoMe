@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startReactiveForce: 200
-  explosionForce: 200
-  damageRadius: 10
+  explosionForce: 50
+  damageRadius: 2
   damage: 250
   explosionEffects: {fileID: 2460201614167559244, guid: 1138b4548a20d4640b1e6253419cf032,
     type: 3}

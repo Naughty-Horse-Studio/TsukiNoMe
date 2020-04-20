@@ -6,15 +6,30 @@ public class AudioTrigger : MonoBehaviour
 {
     public AudioSource audioComnponent;
 
-    private void OnTriggerEnter(Collider other)
+  //  public MainMenuSceneManager _sceneManager;
+
+
+
+
+    private void Start()
     {
-        if (other.CompareTag("NPC"))
-        {
-            audioComnponent.Play();
-
-   
-        }
-        Debug.Log(other.tag.ToString());
-
+    //    _sceneManager = GetComponent<MainMenuSceneManager>();
+        StartCoroutine(waitAudio ());
     }
+
+
+
+    private IEnumerator waitAudio()
+    {
+        
+        yield return new WaitForSeconds(20f);
+
+        audioComnponent.Play();
+
+        yield return new WaitForSeconds(audioComnponent.clip.length);
+
+        if (ApplicationManager.instance) ApplicationManager.instance.LoadMainMenu();
+        print("end of sound");
+    }
+
 }

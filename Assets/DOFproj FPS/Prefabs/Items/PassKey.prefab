@@ -295,8 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1739569474
-  title: Passcode
-  description: Sample Passcode
+  title: COVID-19
+  description: COVID-19 Syringe
   type: 5
   icon: {fileID: 21300000, guid: a839d0a67134f0a4c85acdfb581a229a, type: 3}
   width: 1
