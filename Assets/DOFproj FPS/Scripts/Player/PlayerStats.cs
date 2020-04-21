@@ -205,6 +205,10 @@ namespace DOFprojFPS
            
         }
 
+        public void DeactivateSpotLight(bool _vBool)
+        {
+            _flashLight.SetActive(_vBool); ppProfile.vignette.enabled = _vBool;
+        }
         void ChangeDepthOfFieldAtRuntime(float val)
         {
             //copy current "depth of field" settings from the profile into a temporary variable

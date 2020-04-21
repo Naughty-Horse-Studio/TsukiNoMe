@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cupboard Door Sounds
   m_EditorClassIdentifier: 
   _audioGroup: Scene
-  _volume: 0.6
+  _volume: 0.3
   _spatialBlend: 1
   _priority: 128
   _audioClipBanks:

@@ -67,7 +67,8 @@ public class InteractiveGenericSwitch : InteractiveItem
 
     [SerializeField] private PlayerStats _playerStats = null;
 
-   // public Text statplayerText;
+
+    // public Text statplayerText;
     // ---------------------------------------------------------------------------
     // Name	: Start
     // Desc	: Register this objects collider with the Activation Database
@@ -169,14 +170,17 @@ public class InteractiveGenericSwitch : InteractiveItem
 
 		if (_activated)
 		{
-			foreach(GameState state in _activateStates)
+
+            _playerStats.DeactivateSpotLight(false);
+            foreach (GameState state in _activateStates)
 			{
 				appManager.SetGameState( state.Key, state.Value );
 			}
 		}
 		else
 		{
-			foreach(GameState state in _deactivateStates)
+            _playerStats.DeactivateSpotLight(true);
+            foreach (GameState state in _deactivateStates)
 			{
 				appManager.SetGameState( state.Key, state.Value );
 			}
@@ -229,8 +233,9 @@ public class InteractiveGenericSwitch : InteractiveItem
         _activated = !_activated;
 		_firstUse  = true;
 
-		// PLay the activation Sound Effect
-		if (_activationSounds!=null && _activated )
+        _playerStats.DeactivateSpotLight(true);
+        // PLay the activation Sound Effect
+        if (_activationSounds!=null && _activated )
 		{
          
             AudioClip clipToPlay = _activationSounds[0];
@@ -246,6 +251,8 @@ public class InteractiveGenericSwitch : InteractiveItem
                 _audioSource.priority = _activationSounds.priority;
                 _audioSource.outputAudioMixerGroup = AudioManager.instance.GetAudioGroupFromTrackName(_activationSounds.audioGroup);
                 _audioSource.Play();
+
+
             }
         }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Locker Sounds
   m_EditorClassIdentifier: 
   _audioGroup: Scene
-  _volume: 0.5
+  _volume: 0.4
   _spatialBlend: 1
   _priority: 128
   _audioClipBanks:
