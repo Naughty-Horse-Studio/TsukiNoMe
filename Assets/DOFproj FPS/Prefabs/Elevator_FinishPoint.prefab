@@ -160,6 +160,13 @@ MonoBehaviour:
     type: 2}
   _playerStats: {fileID: 0}
   distance: 2
+  rebel_Prefab: {fileID: 0}
+  rebel_Enemy_Count: 0
+  zombie_Prefab: {fileID: 0}
+  zombie_Enemy_Count: 0
+  rebel_SpawnPoints: []
+  zombie_SpawnPoints: []
+  wait_Before_Spawn_Enemies_Time: 3
 --- !u!1 &4229215397151438491
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +858,13 @@ MonoBehaviour:
     type: 2}
   _playerStats: {fileID: 0}
   distance: 2
+  rebel_Prefab: {fileID: 0}
+  rebel_Enemy_Count: 0
+  zombie_Prefab: {fileID: 0}
+  zombie_Enemy_Count: 0
+  rebel_SpawnPoints: []
+  zombie_SpawnPoints: []
+  wait_Before_Spawn_Enemies_Time: 3
 --- !u!1 &9124312838849558644
 GameObject:
   m_ObjectHideFlags: 0

@@ -208,6 +208,15 @@ public class InteractiveKeypad : InteractiveItem
             if (_mcontroller)
             {
                 _mcontroller.freezeMovement = true;
+
+
+                _mplayerStats.DoComplete();
+
+                _mcontroller.lockCursor = false;
+               
+                               
+
+               
             }
         }
     }

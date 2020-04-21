@@ -224,18 +224,46 @@ namespace DOFprojFPS
 
               Fade(4.0f, ScreenFadeType2.FadeOut);
               ShowMissionText("Mission Completed");
-               //_playerStats.Invalidate(this);                             //actually this is for Health & Stamina , we dont need this anymore.
-            
+            //_playerStats.Invalidate(this);                             //actually this is for Health & Stamina , we dont need this anymore.
 
-              Invoke("GameOver", 4.0f);
+
+            weaponManager.HideWeaponOnDeath();
+
+            controller.lockCursor = false;
+
+            Cursor.lockState = CursorLockMode.None;
+
+            isPlayerDead = true;
+
+            if (_coroutine != null) StopCoroutine(_coroutine);
+
+            Invoke("GameOver", 4.0f);
+
+        }
+
+        public void DoComplete()
+        {
+          
+            weaponManager.HideWeaponOnDeath();
+
+            controller.lockCursor = false;
+
+            Cursor.lockState = CursorLockMode.None;
+
+            isPlayerDead = true;
+
+      
 
         }
 
         void GameOver()
         {
             // Show the cursor again
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+
+
+         
 
             if (ApplicationManager.instance)
                 ApplicationManager.instance.LoadMainMenu();
