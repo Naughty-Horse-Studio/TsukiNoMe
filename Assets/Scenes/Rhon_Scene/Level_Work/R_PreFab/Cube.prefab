@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 897410007695792437}
   - component: {fileID: 8074367087660698913}
   - component: {fileID: 3687184011609176627}
-  - component: {fileID: 43081961}
+  - component: {fileID: 169536561}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8029987830127650275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.901394, y: 3.3838055, z: 0.10233437}
+  m_LocalScale: {x: 6.0268617, y: 3.3838055, z: 0.10233437}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -90,9 +90,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!208 &43081961
+  m_Size: {x: 1, y: 1, z: 1.7174164}
+  m_Center: {x: -8.814648e-18, y: 0, z: 0.026091862}
+--- !u!208 &169536561
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
