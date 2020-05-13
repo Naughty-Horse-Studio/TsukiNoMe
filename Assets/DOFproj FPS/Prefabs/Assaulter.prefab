@@ -138,7 +138,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0005072546, y: 0.32868406, z: 0.033116266}
+  m_ConnectedAnchor: {x: -0.00047339196, y: 0.328683, z: 0.03312219}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 1975770108}
   m_Layer: 22
   m_Name: Assaulter
-  m_TagString: NPC
+  m_TagString: Flesh
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +347,7 @@ Transform:
   m_GameObject: {fileID: 1048649127508842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.72507095, y: 0.72507095, z: 0.72507095}
+  m_LocalScale: {x: 0.92, y: 0.92, z: 0.92}
   m_Children:
   - {fileID: 4507586885633306}
   - {fileID: 4345344980642308}
@@ -408,7 +408,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.81
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -460,10 +460,11 @@ MonoBehaviour:
   turnSpeed: 1
   shotLayerMask:
     serializedVersion: 2
-    m_Bits: 6291457
+    m_Bits: 4294967295
+  DeadBody: {fileID: 457503552560744636, guid: 5540305352069d8448c9d6356978443c, type: 3}
   lookPosition: {x: 0, y: 0, z: 0}
   enemyTactics: 0
-  defaultBehavior: 0
+  defaultBehavior: 3
   patrolPoints: []
   patrolSpeed: 0.5
   targetToFollow: {fileID: 0}
@@ -632,6 +633,7 @@ MonoBehaviour:
   woodDecal_pool: []
   dirtDecal_pool: []
   metalDecal_pool: []
+  usedByNPC: 1
 --- !u!114 &114360870858049040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,10 +705,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.34
+  m_Radius: 0.5370969
+  m_Height: 1.8684666
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: 0, y: 0.9106835, z: -0.0060744905}
 --- !u!65 &1975770108
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1293,7 +1295,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0020513572, y: 0.20400953, z: 0.0012325272}
+  m_ConnectedAnchor: {x: -0.0020222925, y: 0.20400412, z: 0.0012582093}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -6248,7 +6250,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000052675605, y: 0.20617309, z: -0.000012539327}
+  m_ConnectedAnchor: {x: 0.000000022351742, y: 0.20616622, z: 0.000000014901161}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -6450,7 +6452,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000391379, y: 0.45189828, z: -0.0000047422945}
+  m_ConnectedAnchor: {x: -0.00000019744039, y: 0.45189515, z: -0.00000040978193}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -11515,7 +11517,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.20536894, y: 0.17325303, z: 0.025937306}
+  m_ConnectedAnchor: {x: 0.20537175, y: 0.17324972, z: 0.025958806}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -12057,7 +12059,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18545862, y: 0.13868545, z: 0.023366913}
+  m_ConnectedAnchor: {x: -0.18547471, y: 0.13868812, z: 0.023353478}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -12304,7 +12306,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.1094794, y: -0.052333802, z: 0.009471264}
+  m_ConnectedAnchor: {x: 0.1094559, y: -0.052336153, z: 0.009473657}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -12798,7 +12800,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000013455749, y: 0.4532978, z: 0.0000043958426}
+  m_ConnectedAnchor: {x: -0.0000001937151, y: 0.45329347, z: 0.00000020116568}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -13261,7 +13263,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000023655593, y: 0.20590962, z: 0.000007793307}
+  m_ConnectedAnchor: {x: 0.000000007450581, y: 0.20591886, z: -0.000000022351742}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -13523,7 +13525,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.10949871, y: -0.052338865, z: 0.0054180287}
+  m_ConnectedAnchor: {x: -0.10945606, y: -0.052336216, z: 0.005415786}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -13771,15 +13773,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visibilityCheckInterval: 0.5
   FOV: 130
-  detectionRange: 100
+  detectionRange: 50
   targetFraction: 1
   objectsInRange: []
   potentialTargets: []
   visibleTargets: []
   playerIsFriendly: 0
-  layerMask:
+  layerMaskForVision:
     serializedVersion: 2
-    m_Bits: 6291457
+    m_Bits: 4294967295
+  layerMaskForOverlap:
+    serializedVersion: 2
+    m_Bits: 7340032
 --- !u!1 &1900337675444926
 GameObject:
   m_ObjectHideFlags: 0
@@ -18679,6 +18684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4906550100171006}
+  - component: {fileID: 9205655438026702499}
   m_Layer: 24
   m_Name: ar15
   m_TagString: Flesh
@@ -18713,3 +18719,16 @@ Transform:
   m_Father: {fileID: 4473860212623498}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
+--- !u!65 &9205655438026702499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963898772209916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22317837, y: 1.3106294, z: 3.3525097}
+  m_Center: {x: -0.019872546, y: -0.15531482, z: -0.07583775}
