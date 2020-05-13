@@ -1992,7 +1992,7 @@ MonoBehaviour:
   health: 100
   timeToCalmDown: 15
   ammo: 30
-  damage: 10
+  damage: 30
   aimOffset: {x: 13.6, y: 40.9, z: 0}
   shootingAccuracySpread: 0.01
   fireMode: 1
