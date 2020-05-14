@@ -254,7 +254,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.3510647e-38, z: 0, w: 2.3510647e-38}
+  m_BoundingSphereOverride: {x: 0, y: 9.404546e-38, z: 0, w: 2.3510647e-38}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -274,7 +274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2425166250565535860
 Transform:
   m_ObjectHideFlags: 0
@@ -300,8 +300,8 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 0.33282873, g: 0.83823526, b: 0.4199678, a: 1}
-  m_Intensity: 2
-  m_Range: 1.89
+  m_Intensity: 1
+  m_Range: 1.102347
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -334,10 +334,10 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -345,7 +345,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: NaN, w: 1.05e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -819,6 +819,7 @@ MonoBehaviour:
   - {fileID: 2425856315644717728}
   - {fileID: 0}
   _playerStats: {fileID: 0}
+  triggerToEnabled_1: {fileID: 0}
 --- !u!1 &2426631673464769362
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +832,6 @@ GameObject:
   - component: {fileID: 2439832272598160504}
   - component: {fileID: 2448284887169188032}
   - component: {fileID: 2425634625022243971}
-  - component: {fileID: 6786629423463382325}
   m_Layer: 26
   m_Name: Generator
   m_TagString: Interactive
@@ -911,22 +911,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 136.24968, y: 203.76295, z: 311.0696}
   m_Center: {x: -0.00048907264, y: 98.79072, z: 5.702663}
---- !u!208 &6786629423463382325
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2426631673464769362}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 68.125, y: 101.881004, z: 156.61}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 98.79101, z: 4.6280003}
-  m_TimeToStationary: 0.5
 --- !u!1 &2427420038597410690
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2427420038597410690}
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.135, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 2430027908648758732}
