@@ -7,7 +7,7 @@ public class DistanceDisable : MonoBehaviour
     Transform player;
     public GameObject objToDisable;
 
-
+    public GameObject objToDisable2;
 
 
     public float distanceToDisable = 50;
@@ -22,6 +22,8 @@ public class DistanceDisable : MonoBehaviour
         if(objToDisable.activeInHierarchy && Vector3.Distance(transform.position, player.transform.position) > distanceToDisable)
         {
             objToDisable.SetActive(false);
+            if (objToDisable2 != null)
+                objToDisable2.SetActive(false);
         }
         else
         {
