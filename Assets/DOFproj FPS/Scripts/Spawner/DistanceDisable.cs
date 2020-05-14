@@ -27,7 +27,10 @@ public class DistanceDisable : MonoBehaviour
         }
         else
         {
+
             objToDisable.SetActive(true);
+            if (objToDisable2 != null)
+                objToDisable2.SetActive(true);
         }
 
         //++++++++++++++++++++++++++++++++++++++++++++++++
