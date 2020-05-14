@@ -259,8 +259,8 @@ namespace DOFprojFPS
         void GameOver()
         {
             // Show the cursor again
-            //Cursor.visible = true;
-            //Cursor.lockState = CursorLockMode.None;
+       Cursor.visible = true;
+          Cursor.lockState = CursorLockMode.None;
 
 
          
