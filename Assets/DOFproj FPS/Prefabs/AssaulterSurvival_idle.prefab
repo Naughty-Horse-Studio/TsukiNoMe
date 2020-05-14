@@ -14775,7 +14775,7 @@ GameObject:
   - component: {fileID: 1185902208155301956}
   - component: {fileID: 1186296611992262867}
   m_Layer: 22
-  m_Name: AssaulterSurvival_d1
+  m_Name: AssaulterSurvival_idle
   m_TagString: Flesh
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14873,10 +14873,10 @@ MonoBehaviour:
   fireSFX: {fileID: 8300000, guid: 58d88e3cbcb9ff143a0dfd112ade1e79, type: 3}
   painSFX: []
   NPCNameInDatabase: AssaulterSurvival
-  health: 100
+  health: 300
   timeToCalmDown: 15
   ammo: 30
-  damage: 10
+  damage: 30
   aimOffset: {x: 13.6, y: 40.9, z: 0}
   shootingAccuracySpread: 0.01
   fireMode: 1
