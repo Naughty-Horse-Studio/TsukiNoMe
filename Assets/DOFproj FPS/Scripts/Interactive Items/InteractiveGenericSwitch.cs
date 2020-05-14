@@ -67,6 +67,7 @@ public class InteractiveGenericSwitch : InteractiveItem
 
     [SerializeField] private PlayerStats _playerStats = null;
 
+    public GameObject triggerToEnabled_1;
 
     // public Text statplayerText;
     // ---------------------------------------------------------------------------
@@ -171,6 +172,9 @@ public class InteractiveGenericSwitch : InteractiveItem
 		if (_activated)
 		{
 
+            if (triggerToEnabled_1 != null)
+                triggerToEnabled_1.SetActive(true);
+
             _playerStats.DeactivateSpotLight(false);
             foreach (GameState state in _activateStates)
 			{
@@ -179,6 +183,9 @@ public class InteractiveGenericSwitch : InteractiveItem
 		}
 		else
 		{
+            if (triggerToEnabled_1 != null)
+                triggerToEnabled_1.SetActive(false);
+
             _playerStats.DeactivateSpotLight(true);
             foreach (GameState state in _deactivateStates)
 			{

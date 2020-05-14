@@ -29,12 +29,16 @@ public class DistanceDisable : MonoBehaviour
         {
 
             objToDisable.SetActive(true);
-            if (objToDisable2 != null)
-                objToDisable2.SetActive(true);
+            //if (objToDisable2 != null)
+            //    objToDisable2.SetActive(true);
         }
 
         //++++++++++++++++++++++++++++++++++++++++++++++++
-        //objNPC_1
+        //if (objToDisable2.activeInHierarchy && Vector3.Distance(transform.position, player.transform.position) > distanceToDisable)
+        //{
+       
+         
+        //}
 
 
     }
