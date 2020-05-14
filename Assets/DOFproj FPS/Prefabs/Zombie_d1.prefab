@@ -2167,7 +2167,7 @@ MonoBehaviour:
   wanderingSpeed: 0.5
   wanderingTimer: 10
   wanderingRadius: 20
-  attackDistance: 6
+  attackDistance: 3
   zombieRagdoll: {fileID: 0}
   runSpeed: 3
   notRoared: 1
