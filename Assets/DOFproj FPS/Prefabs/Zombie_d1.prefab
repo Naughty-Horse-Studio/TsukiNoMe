@@ -2047,7 +2047,6 @@ GameObject:
   - component: {fileID: 4772662015364725722}
   - component: {fileID: 4772662015364725334}
   - component: {fileID: 4772662015364725335}
-  - component: {fileID: 4772662015364726184}
   m_Layer: 22
   m_Name: Zombie_d1
   m_TagString: Flesh
@@ -2136,7 +2135,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 350
-  m_StoppingDistance: 1.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2157,7 +2156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 45
-  maxDamage: 10
+  maxDamage: 20
   isAgressive: 1
   roar: {fileID: 8300000, guid: b6fff5a8ab417d04ab6fd83ed1de893d, type: 3}
   attackSounds:
@@ -2167,14 +2166,14 @@ MonoBehaviour:
   wanderingSpeed: 0.5
   wanderingTimer: 10
   wanderingRadius: 20
-  attackDistance: 3
+  attackDistance: 1.2
   zombieRagdoll: {fileID: 0}
   runSpeed: 3
   notRoared: 1
   isWorried: 0
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
-  m_JumpPower: 12
+  m_JumpPower: 15
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
@@ -2350,25 +2349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactTag: 
---- !u!114 &4772662015364726184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4772662015364726120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf9db670c1df4bb2843b82560ce5409, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 5b47ca1209db34047b14f65d2db913e4, type: 3}
-  size: {x: 100, y: 100}
-  rotateWithObject: 1
-  upAxis: {x: 0, y: 1, z: 0}
-  initialIconRotation: 0
-  clampIconInBorder: 1
-  clampDistance: 100
 --- !u!1 &4772662015364726121
 GameObject:
   m_ObjectHideFlags: 0
