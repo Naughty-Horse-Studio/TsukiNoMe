@@ -37,20 +37,54 @@ namespace DOFprojFPS
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F5) && !PlayerStats.isPlayerDead)
+            //bool leftControl = false;
+
+            //if (Input.GetKeyDown(KeyCode.LeftControl))
+            //    leftControl = true;
+            //if (Input.GetKeyUp(KeyCode.LeftControl))
+            //    leftControl = false;
+
+            //if (leftControl && Input.GetKeyUp(KeyCode.Z) && !PlayerStats.isPlayerDead)
+            //{
+            //    FadeMessage._text.text = "";
+            //    Save();
+            //    FadeMessage._text.text = "Game saved";
+            //}
+
+            //if (leftControl && Input.GetKeyUp(KeyCode.V) && !PlayerStats.isPlayerDead)
+            //{
+            //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //    loadDataTrigger = true;
+            //}
+
+            if (Input.GetKeyDown(KeyCode.Keypad8) && !PlayerStats.isPlayerDead)
             {
                 FadeMessage._text.text = "";
                 Save();
                 FadeMessage._text.text = "Game saved";
             }
 
-            if (Input.GetKeyDown(KeyCode.F9))
+            if (Input.GetKeyDown(KeyCode.Keypad9))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 loadDataTrigger = true;
             }
+
+            //below are Original Codes
+            //if (Input.GetKeyDown(KeyCode.F5) && !PlayerStats.isPlayerDead)
+            //{
+            //    FadeMessage._text.text = "";
+            //    Save();
+            //    FadeMessage._text.text = "Game saved";
+            //}
+
+            //if (Input.GetKeyDown(KeyCode.F9))
+            //{
+            //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //    loadDataTrigger = true;
+            //}
         }
-        
+
         public void Save()
         {
             var stat = FindObjectOfType<PlayerStats>();

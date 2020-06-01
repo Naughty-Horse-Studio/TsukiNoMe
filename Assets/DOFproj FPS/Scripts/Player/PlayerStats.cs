@@ -104,6 +104,8 @@ namespace DOFprojFPS
         public PostProcessingProfile ppProfile;
         public bool changeValue;
 
+     //   public GameObject _mDisablerObj;
+
 
         private void Start()
         {
@@ -116,7 +118,10 @@ namespace DOFprojFPS
 
             if (_missionText)
             {
+
                 Invoke("HideMissionText", _missionTextDisplayTime);
+
+                
             }
 
             //   _collider = GetComponent<Collider>();
@@ -135,7 +140,7 @@ namespace DOFprojFPS
             weaponManager = FindObjectOfType<WeaponManager>();
             sway = FindObjectOfType<Sway>();
             input = FindObjectOfType<InputManager>();
-
+      
             if (!InputManager.useMobileInput)
             playerBody = FindObjectOfType<Body>().gameObject;
 
@@ -224,7 +229,7 @@ namespace DOFprojFPS
 
               Fade(4.0f, ScreenFadeType2.FadeOut);
               ShowMissionText("Mission Completed");
-            //_playerStats.Invalidate(this);                             //actually this is for Health & Stamina , we dont need this anymore.
+           ///// //_playerStats.Invalidate(this);                             //actually this is for Health & Stamina , we dont need this anymore.
 
 
             weaponManager.HideWeaponOnDeath();
@@ -259,11 +264,11 @@ namespace DOFprojFPS
         void GameOver()
         {
             // Show the cursor again
-       Cursor.visible = true;
-          Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
 
 
-         
+
 
             if (ApplicationManager.instance)
                 ApplicationManager.instance.LoadMainMenu();
@@ -348,6 +353,8 @@ namespace DOFprojFPS
             if (_missionText)
             {
                 _missionText.gameObject.SetActive(false);
+
+         //       _mDisablerObj.SetActive(true);
             }
         }
         public void ConsumableManager(bool useSystem)
