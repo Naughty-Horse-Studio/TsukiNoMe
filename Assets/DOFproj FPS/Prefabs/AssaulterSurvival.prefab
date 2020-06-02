@@ -1963,7 +1963,7 @@ NavMeshAgent:
   m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 300
-  m_StoppingDistance: 1.14
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1990,10 +1990,10 @@ MonoBehaviour:
   painSFX: []
   NPCNameInDatabase: AssaulterSurvival
   health: 200
-  timeToCalmDown: 15
+  timeToCalmDown: 9
   ammo: 30
   damage: 30
-  aimOffset: {x: 13.6, y: 40.9, z: 0}
+  aimOffset: {x: 13.6, y: 39, z: 0}
   shootingAccuracySpread: 0.01
   fireMode: 1
   fireRate: 0.07
@@ -2008,13 +2008,13 @@ MonoBehaviour:
   destinationReached: 1
   curretTarget: {fileID: 0}
   m_MovingTurnSpeed: 360
-  m_StationaryTurnSpeed: 180
+  m_StationaryTurnSpeed: 360
   m_JumpPower: 12
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.3
+  m_GroundCheckDistance: 2
   lookAtTarget: 0
   turnSpeed: 1
   shotLayerMask:

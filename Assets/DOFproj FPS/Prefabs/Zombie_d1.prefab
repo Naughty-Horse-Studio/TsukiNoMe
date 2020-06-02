@@ -2135,7 +2135,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 350
-  m_StoppingDistance: 1
+  m_StoppingDistance: 1.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2165,8 +2165,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 848c05b0a857ad047b052779513cc655, type: 3}
   wanderingSpeed: 0.5
   wanderingTimer: 10
-  wanderingRadius: 20
-  attackDistance: 1.2
+  wanderingRadius: 10
+  attackDistance: 1.6
   zombieRagdoll: {fileID: 0}
   runSpeed: 3
   notRoared: 1
@@ -2178,7 +2178,7 @@ MonoBehaviour:
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.3
+  m_GroundCheckDistance: 0.6
 --- !u!114 &4772662015364725333
 MonoBehaviour:
   m_ObjectHideFlags: 0

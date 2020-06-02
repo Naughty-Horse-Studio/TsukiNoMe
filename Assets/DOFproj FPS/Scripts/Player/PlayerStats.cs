@@ -104,8 +104,9 @@ namespace DOFprojFPS
         public PostProcessingProfile ppProfile;
         public bool changeValue;
 
-     //   public GameObject _mDisablerObj;
-
+      
+        //   public GameObject _mDisablerObj;
+        private InventoryAudioPlayer audioPlayer;
 
         private void Start()
         {
@@ -116,6 +117,8 @@ namespace DOFprojFPS
                 _screenFade.color = color;
             }
 
+       
+
             if (_missionText)
             {
 
@@ -123,6 +126,8 @@ namespace DOFprojFPS
 
                 
             }
+
+            audioPlayer = FindObjectOfType<InventoryAudioPlayer>();
 
             //   _collider = GetComponent<Collider>();
             _collider = this.gameObject.transform.GetChild(2).GetChild(0).GetComponent<Collider>();
@@ -280,7 +285,13 @@ namespace DOFprojFPS
 
             Fade(4.0f, ScreenFadeType2.FadeOut);
              ShowMissionText("Mission Failed");
-            // _playerHUD.Invalidate(this);
+
+          
+
+
+            InventoryAudioPlayer audioPlayer = InventoryAudioPlayer.instance;
+            if (audioPlayer)
+                audioPlayer.StopAudio();
 
             if (_flashLight)
                 _flashLight.SetActive(!_flashLight.activeSelf);

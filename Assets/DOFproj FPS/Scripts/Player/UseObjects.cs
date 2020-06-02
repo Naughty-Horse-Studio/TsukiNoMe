@@ -340,12 +340,12 @@ namespace DOFprojFPS
         // Desc :   Instructs the Audio Player to stop playing it's audio. Triggers a manual stop of
         //          the audio player.
         // --------------------------------------------------------------------------------------------
-        //public override void StopAudioRecording()
-        //{
-        //    InventoryAudioPlayer audioPlayer = InventoryAudioPlayer.instance;
-        //    if (audioPlayer)
-        //        audioPlayer.StopAudio();
-        //}
+        public void StopAudioRecording()
+        {
+            InventoryAudioPlayer audioPlayer = InventoryAudioPlayer.instance;
+            if (audioPlayer)
+                audioPlayer.StopAudio();
+        }
 
     }
 }
