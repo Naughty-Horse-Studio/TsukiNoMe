@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DOFprojFPS;
+using UnityEngine.SceneManagement;
+
 public enum ScreenFadeType{ FadeIn, FadeOut }
 
 public class PlayerHUD : MonoBehaviour 
@@ -143,13 +145,23 @@ public class PlayerHUD : MonoBehaviour
     {
         if (_pdaAudioTimeline) _pdaAudioTimeline.value = time;
     }
-
+    private Scene scene;
     public void OnEndAudio()
     {
         if (_pdaOverlay)
         {
             _pdaOverlay.SetActive(false);
-            StartCoroutine(delayExitScene());
+
+           
+
+ 
+        scene = SceneManager.GetActiveScene();
+        Debug.Log("Name: " + scene.name);
+  
+            if(scene.name == "Phil_KojimaStyleScene")
+            { 
+                     StartCoroutine(delayExitScene());
+            }
         }
     }
 

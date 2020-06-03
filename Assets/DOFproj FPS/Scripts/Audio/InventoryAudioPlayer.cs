@@ -63,7 +63,7 @@ public class InventoryAudioPlayer : MonoBehaviour
     // --------------------------------------------------------------------------------------------
     public void PlayAudio(InventoryItemAudio audioItem)
     {
-        Debug.Log("Gotcha!");
+      //  Debug.Log("Gotcha!");
         // Stop the coroutine if was running previously
         if (_coroutine != null)
         {

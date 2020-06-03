@@ -387,7 +387,7 @@ namespace DOFprojFPS
             audioPlayer = InventoryAudioPlayer.instance;
             if (audioPlayer)
             {
-                   Debug.Log("GotCha! added recording");
+        //           Debug.Log("GotCha! added recording");
                 audioPlayer.OnEndAudio.RemoveListener(StopAudioListener);
                 audioPlayer.OnEndAudio.AddListener(StopAudioListener);
 
