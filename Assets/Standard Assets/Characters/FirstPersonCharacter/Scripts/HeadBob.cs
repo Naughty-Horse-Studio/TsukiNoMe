@@ -20,7 +20,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Start()
         {
-      //      motionBob.Setup(Camera, StrideInterval);
+            motionBob.Setup(Camera, StrideInterval);
             m_OriginalCameraPosition = Camera.transform.localPosition;
        //     m_CameraRefocus = new CameraRefocus(Camera, transform.root.transform, Camera.transform.localPosition);
         }
@@ -32,7 +32,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             Vector3 newCameraPosition;
             if (rigidbodyFirstPersonController.Velocity.magnitude > 0 && rigidbodyFirstPersonController.Grounded)
             {
-           //     Camera.transform.localPosition = motionBob.DoHeadBob(rigidbodyFirstPersonController.Velocity.magnitude*(rigidbodyFirstPersonController.Running ? RunningStrideLengthen : 1f));
+                Camera.transform.localPosition = motionBob.DoHeadBob(rigidbodyFirstPersonController.Velocity.magnitude*(rigidbodyFirstPersonController.Running ? RunningStrideLengthen : 1f));
                 newCameraPosition = Camera.transform.localPosition;
                 newCameraPosition.y = Camera.transform.localPosition.y - jumpAndLandingBob.Offset();
             }

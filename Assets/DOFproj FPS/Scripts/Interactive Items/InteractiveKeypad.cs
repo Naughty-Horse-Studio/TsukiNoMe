@@ -212,7 +212,7 @@ public class InteractiveKeypad : InteractiveItem
 
                 _mplayerStats.DoComplete();
 
-                _mcontroller.lockCursor = false;
+           //     _mcontroller.lockCursor = false;
                
                                
 
