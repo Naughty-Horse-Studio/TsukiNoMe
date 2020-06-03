@@ -97,7 +97,8 @@ namespace DOFprojFPS
 
         void Update()
         {
-          //  HitObjectPriority();
+            //  HitObjectPriority();
+
 
             Pickup();
         }
@@ -114,15 +115,16 @@ namespace DOFprojFPS
             _skipbtn.SetActive(true);
 
 
-            yield return new WaitForSeconds(audioComnponent.clip.length);
+            yield return new WaitForSeconds(audioComnponent.clip.length - 35f);
 
-       //   ApplicationManager instance = ApplicationManager.instance;
-
-            if (_activeAudioRecordingIndex < 0) ApplicationManager.instance.LoadMainMenu();
+            //   ApplicationManager instance = ApplicationManager.instance;
 
 
+     //      if (_activeAudioRecordingIndex < 0) ApplicationManager.instance.LoadMainMenu();
 
-            Debug.Log("end of sound = " + _activeAudioRecordingIndex);
+
+
+            //   Debug.Log("end of sound = " + _activeAudioRecordingIndex);
         }
 
         private IEnumerator activateZombie()

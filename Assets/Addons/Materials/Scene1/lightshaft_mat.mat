@@ -62,7 +62,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EmissionScaleUI: 0
-    - _FadeDist: 3
+    - _FadeDist: 8.25
     - _Glossiness: 0.5
     - _Inside: 1
     - _InvFade: 1

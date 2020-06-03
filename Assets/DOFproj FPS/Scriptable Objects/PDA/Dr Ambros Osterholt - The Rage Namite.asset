@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dr Ambros Osterholt - The Rage Namite
   m_EditorClassIdentifier: 
   _audioGroup: Player2
-  _volume: 0.6
+  _volume: 1
   _spatialBlend: 0
   _priority: 256
   _audioClipBanks:

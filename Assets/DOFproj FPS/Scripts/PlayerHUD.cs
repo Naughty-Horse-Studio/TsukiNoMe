@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using DOFprojFPS;
 public enum ScreenFadeType{ FadeIn, FadeOut }
 
 public class PlayerHUD : MonoBehaviour 
@@ -146,6 +146,23 @@ public class PlayerHUD : MonoBehaviour
 
     public void OnEndAudio()
     {
-        if (_pdaOverlay) _pdaOverlay.SetActive(false);
+        if (_pdaOverlay)
+        {
+            _pdaOverlay.SetActive(false);
+            StartCoroutine(delayExitScene());
+        }
+    }
+
+    private IEnumerator delayExitScene()
+    {
+
+        yield return new WaitForSeconds(5f);
+
+
+        ApplicationManager.instance.LoadMainMenu();
+
+
+
+        //   Debug.Log("end of sound = " + _activeAudioRecordingIndex);
     }
 }
