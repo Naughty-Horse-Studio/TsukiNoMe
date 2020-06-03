@@ -237,9 +237,10 @@ namespace DOFprojFPS
               ShowMissionText("Mission Completed");
             ///// //_playerStats.Invalidate(this);                             //actually this is for Health & Stamina , we dont need this anymore.
 
+
             if (audioBackground.isPlaying)
                 audioBackground.Stop();
-
+ 
             weaponManager.HideWeaponOnDeath();
 
             controller.lockCursor = false;

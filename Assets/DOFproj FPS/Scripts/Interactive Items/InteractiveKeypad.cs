@@ -109,7 +109,7 @@ public class InteractiveKeypad : InteractiveItem
             if (string.IsNullOrEmpty(accessCodeState) || !accessCodeState.Equals("TRUE"))
             {
                 _mplayerStats.ShowMessageText("Keypad : Access Code Required");
-                return; 
+                return;
             }
 
 
@@ -153,15 +153,16 @@ public class InteractiveKeypad : InteractiveItem
      
         ApplicationManager appDatabase = ApplicationManager.instance;
 		if (!appDatabase) return;
-     
-        string powerState 		= appDatabase.GetGameState("POWER");
-		string lockdownState	= appDatabase.GetGameState("LOCKDOWN");
-		string accessCodeState	= appDatabase.GetGameState("ACCESSCODE");
 
-		if ( string.IsNullOrEmpty( powerState ) || !powerState.Equals("TRUE")) 				return;
-		if ( string.IsNullOrEmpty( lockdownState ) || !lockdownState.Equals("FALSE"))		return;
+        string powerState = appDatabase.GetGameState("POWER");
+        string lockdownState = appDatabase.GetGameState("LOCKDOWN");
+        string accessCodeState = appDatabase.GetGameState("ACCESSCODE");
+
+        if (string.IsNullOrEmpty(powerState) || !powerState.Equals("TRUE")) return;
+        if (string.IsNullOrEmpty(lockdownState) || !lockdownState.Equals("FALSE")) return;
         if (string.IsNullOrEmpty(accessCodeState) || !accessCodeState.Equals("TRUE")) return;
 
+        Debug.Log("gOTCHA 23");
         // Delay the actual animation for the desired number of seconds
         StartCoroutine ( DoDelayedActivation());
     
@@ -171,11 +172,12 @@ public class InteractiveKeypad : InteractiveItem
 	protected IEnumerator DoDelayedActivation()
 	{
 		if (!_elevator) yield break;;
-
-		// Play the sound
-		if (_collection!=null)
+        Debug.Log("gOTCHA12");
+        // Play the sound
+        if (_collection!=null)
 		{
-			AudioClip clip = _collection[ _bank ];
+            Debug.Log("gOTCHA5");
+            AudioClip clip = _collection[ _bank ];
 			if (clip)
 			{
 				if (AudioManager.instance)
@@ -185,19 +187,20 @@ public class InteractiveKeypad : InteractiveItem
 															_collection.volume, 
 															_collection.spatialBlend,
 															_collection.priority );
-				
-			}
+                Debug.Log("gOTCHA6");
+            }
 		}
 
 		// Wait for the desired delay
 		yield return new WaitForSeconds( _activationDelay );
-
+        Debug.Log("gOTCHA7");
         // If we have a character manager
         if (_mcontroller != null)
         {
             // Make it a child of the elevator
             _mcontroller.transform.parent = _elevator;
 
+            Debug.Log("gOTCHA1");
             // Get the animator of the elevator and activate it animation
             Animator animator = _elevator.GetComponent<Animator>();
 			if (animator) animator.SetTrigger( "Activate");
