@@ -103,6 +103,7 @@ namespace DOFprojFPS
 
         public PostProcessingProfile ppProfile;
         public bool changeValue;
+        public AudioSource audioBackground;
 
       
         //   public GameObject _mDisablerObj;
@@ -234,8 +235,10 @@ namespace DOFprojFPS
 
               Fade(4.0f, ScreenFadeType2.FadeOut);
               ShowMissionText("Mission Completed");
-           ///// //_playerStats.Invalidate(this);                             //actually this is for Health & Stamina , we dont need this anymore.
+            ///// //_playerStats.Invalidate(this);                             //actually this is for Health & Stamina , we dont need this anymore.
 
+            if (audioBackground.isPlaying)
+                audioBackground.Stop();
 
             weaponManager.HideWeaponOnDeath();
 
@@ -254,6 +257,7 @@ namespace DOFprojFPS
         public void DoComplete()
         {
           
+
             weaponManager.HideWeaponOnDeath();
 
             controller.lockCursor = false;
@@ -286,10 +290,12 @@ namespace DOFprojFPS
             Fade(4.0f, ScreenFadeType2.FadeOut);
              ShowMissionText("Mission Failed");
 
-          
+            if(audioBackground.isPlaying)
+                audioBackground.Stop();
+            
 
 
-            InventoryAudioPlayer audioPlayer = InventoryAudioPlayer.instance;
+              InventoryAudioPlayer audioPlayer = InventoryAudioPlayer.instance;
             if (audioPlayer)
                 audioPlayer.StopAudio();
 

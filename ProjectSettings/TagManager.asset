@@ -22,6 +22,11 @@ TagManager:
   - Recording
   - Flash Light
   - EmergencyLight
+  - AI Food
+  - Upper Body
+  - Lower Body
+  - Head
+  - AI Sound Emitter
   layers:
   - Default
   - TransparentFX
@@ -51,7 +56,7 @@ TagManager:
   - Dead
   - Interactive
   - RedLight
-  - 
+  - Visual Aggravator
   - 
   - 
   - 
