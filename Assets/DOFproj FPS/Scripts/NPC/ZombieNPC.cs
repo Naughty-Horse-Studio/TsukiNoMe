@@ -18,6 +18,8 @@ namespace DOFprojFPS
         public AudioClip roar;
         public AudioClip[] attackSounds;
 
+        public AudioClip[] ragdollSounds;
+
         [Header("Wandering parameters")]
         public float wanderingSpeed = 0.6f;
         public float wanderingTimer = 13;
@@ -164,6 +166,11 @@ namespace DOFprojFPS
 
         private void Death()
         {
+
+            GetComponent<AudioSource>().PlayOneShot(ragdollSounds[Random.Range(0, ragdollSounds.Length)]);
+             
+          
+
             foreach (Collider collider in GetComponentsInChildren<Collider>())
             {
                 collider.enabled = true;
@@ -222,7 +229,8 @@ namespace DOFprojFPS
             {
                 if (player.gameObject.GetComponent<PlayerStats>() != null)
                 {
-                    audioSource.PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
+                    // audioSource.PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
+                    GetComponent<AudioSource>().PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
                     player.gameObject.GetComponent<PlayerStats>().ApplyDamage(Random.Range(1, maxDamage));
                 }
             }

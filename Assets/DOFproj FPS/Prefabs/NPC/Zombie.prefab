@@ -682,7 +682,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1.7
   m_BaseOffset: -0.04
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 5
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2860561252801517822
 MonoBehaviour:
@@ -701,9 +701,16 @@ MonoBehaviour:
   isAgressive: 1
   roar: {fileID: 8300000, guid: b6fff5a8ab417d04ab6fd83ed1de893d, type: 3}
   attackSounds:
-  - {fileID: 8300000, guid: b6fff5a8ab417d04ab6fd83ed1de893d, type: 3}
-  - {fileID: 8300000, guid: 8423411d887751644a95f733dadff295, type: 3}
-  - {fileID: 8300000, guid: 848c05b0a857ad047b052779513cc655, type: 3}
+  - {fileID: 8300000, guid: 645cecddbba02a04884412fe4eb39fb4, type: 3}
+  - {fileID: 8300000, guid: 285ef40f8bfdc6c448634e580bfeb90d, type: 3}
+  - {fileID: 8300000, guid: 25288068dbf2332429844441df6e20c0, type: 3}
+  ragdollSounds:
+  - {fileID: 8300000, guid: 562296247b24e8e409c8d50806efe008, type: 3}
+  - {fileID: 8300000, guid: 34c3af9c2403b914893c0a220fc621fb, type: 3}
+  - {fileID: 8300000, guid: bf1608663224f8d458ff5c3eda220e7d, type: 3}
+  - {fileID: 8300000, guid: 7ab30477bdc74274aa4a4b4b2de81567, type: 3}
+  - {fileID: 8300000, guid: 0a659c7f0341d2944863ebc8f30e3832, type: 3}
+  - {fileID: 8300000, guid: 01517871da61f11469fa7f1276f7e053, type: 3}
   wanderingSpeed: 0.5
   wanderingTimer: 10
   wanderingRadius: 10
