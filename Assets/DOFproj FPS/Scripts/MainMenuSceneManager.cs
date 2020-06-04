@@ -11,6 +11,8 @@ public class MainMenuSceneManager : MonoBehaviour
     {
         audioPlayer = FindObjectOfType<InventoryAudioPlayer>();
         _mUseAudio = GetComponent<UseObjects2>();
+
+        audioPlayer = InventoryAudioPlayer.instance;
     }
     // Use this for initialization
     public void LoadMenu()
@@ -18,9 +20,10 @@ public class MainMenuSceneManager : MonoBehaviour
         //_mUseAudio.StopAllCoroutines();
         //_mUseAudio.StopAudioRecording();
 
-        InventoryAudioPlayer audioPlayer = InventoryAudioPlayer.instance;
-        if (audioPlayer)
-            audioPlayer.StopAudio();
+     //   InventoryAudioPlayer audioPlayer = InventoryAudioPlayer.instance;
+        if (InventoryAudioPlayer.instance)
+            InventoryAudioPlayer.instance.StopAudio();
+        
 
         if (ApplicationManager.instance) ApplicationManager.instance.LoadMainMenu();
     }
