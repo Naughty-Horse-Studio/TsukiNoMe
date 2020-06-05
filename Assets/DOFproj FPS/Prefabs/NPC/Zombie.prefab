@@ -676,7 +676,7 @@ NavMeshAgent:
   m_Acceleration: 3
   avoidancePriority: 50
   m_AngularSpeed: 350
-  m_StoppingDistance: 1.2
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  maxDamage: 20
+  maxDamage: 5
   isAgressive: 1
   roar: {fileID: 8300000, guid: b6fff5a8ab417d04ab6fd83ed1de893d, type: 3}
   attackSounds:
@@ -708,16 +708,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 562296247b24e8e409c8d50806efe008, type: 3}
   - {fileID: 8300000, guid: 34c3af9c2403b914893c0a220fc621fb, type: 3}
   - {fileID: 8300000, guid: bf1608663224f8d458ff5c3eda220e7d, type: 3}
-  - {fileID: 8300000, guid: 7ab30477bdc74274aa4a4b4b2de81567, type: 3}
-  - {fileID: 8300000, guid: 0a659c7f0341d2944863ebc8f30e3832, type: 3}
-  - {fileID: 8300000, guid: 01517871da61f11469fa7f1276f7e053, type: 3}
   wanderingSpeed: 0.5
   wanderingTimer: 10
   wanderingRadius: 10
-  attackDistance: 1.6
+  attackDistance: 2
   zombieRagdoll: {fileID: 0}
   runSpeed: 1.5
   notRoared: 1
+  mPPlayerStats: {fileID: 0}
   isWorried: 0
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
@@ -727,6 +725,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.6
+  damageRadius: 2
 --- !u!114 &6795383120034596696
 MonoBehaviour:
   m_ObjectHideFlags: 0

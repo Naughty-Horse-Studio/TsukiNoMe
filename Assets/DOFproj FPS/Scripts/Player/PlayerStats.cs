@@ -428,6 +428,21 @@ namespace DOFprojFPS
                 damageScreenFX.color = damageScreenColor;
                 damageScreenColor_temp = damageScreenColor;
                 StartCoroutine(HitFX());
+
+           //     Debug.Log("Damage Screen here.!");
+            }
+        }
+
+        public void ApplyDamage2(int damage)
+        {
+            if (damage > 0)
+            {
+                health -= damage;
+                //damageScreenFX.color = damageScreenColor;
+                //damageScreenColor_temp = damageScreenColor;
+                //StartCoroutine(HitFX());
+
+                Debug.Log("Damage Screen here.!");
             }
         }
 

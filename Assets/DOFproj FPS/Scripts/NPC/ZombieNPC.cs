@@ -44,7 +44,7 @@ namespace DOFprojFPS
 
         private GameObject target;
         private Transform player;
-
+        public PlayerStats mPPlayerStats;
         float timer;
 
         [HideInInspector]
@@ -81,12 +81,18 @@ namespace DOFprojFPS
         private bool lookAtTarget = false;
         #endregion
 
+        private bool _firstContact = false;
+        Collider[] colliders;
+
+        public float damageRadius;
         private void OnEnable()
         {
             audioSource = GetComponent<AudioSource>();
             agent = GetComponentInChildren<NavMeshAgent>();
             animator = GetComponent<Animator>();
             player = GameObject.FindGameObjectWithTag("Player").transform;
+
+            mPPlayerStats = player.gameObject.GetComponent<PlayerStats>();
             capsule = GetComponent<CapsuleCollider>();
             vision = GetComponentInChildren<NPCVision>();
         }
@@ -97,6 +103,8 @@ namespace DOFprojFPS
             agent = GetComponentInChildren<NavMeshAgent>();
             animator = GetComponent<Animator>();
             player = GameObject.FindGameObjectWithTag("Player").transform;
+            mPPlayerStats = player.gameObject.GetComponent<PlayerStats>();
+
             capsule = GetComponent<CapsuleCollider>();
 
             StartCoroutine(CheckFriends());
@@ -136,9 +144,14 @@ namespace DOFprojFPS
                         agent.SetDestination(player.position);
                         if (Vector3.Distance(transform.position, player.position) < attackDistance)
                         {
-                        
-                            //Attack animation have event that call FightHit method to apply damage
+
+
                             animator.Play("Attack");
+
+                            GetComponent<AudioSource>().PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
+
+                            //    StartCoroutine(Attack());
+
                         }
                     }
                 }
@@ -150,11 +163,27 @@ namespace DOFprojFPS
             }
             else
             {
+                GetComponent<AudioSource>().PlayOneShot(ragdollSounds[Random.Range(0, ragdollSounds.Length)]);
                 Death();
             }
 
         }
-        
+        IEnumerator Attack()
+        {
+            if (_firstContact)
+                player.gameObject.GetComponent<PlayerStats>().ApplyDamage(maxDamage);
+            //GetComponent<AudioSource>().PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
+
+
+
+
+            yield return null;
+
+            _firstContact = false;
+
+           // FightHit();
+
+        }
         public void Roar()
         {
             if (notRoared)
@@ -167,7 +196,7 @@ namespace DOFprojFPS
         private void Death()
         {
 
-            GetComponent<AudioSource>().PlayOneShot(ragdollSounds[Random.Range(0, ragdollSounds.Length)]);
+         
              
           
 
@@ -224,16 +253,30 @@ namespace DOFprojFPS
 
         public void FightHit()
         {
-        
-            if (Vector3.Distance(transform.position, player.transform.position) < 4)
-            {
-                if (player.gameObject.GetComponent<PlayerStats>() != null)
-                {
-                    // audioSource.PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
-                    GetComponent<AudioSource>().PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
-                    player.gameObject.GetComponent<PlayerStats>().ApplyDamage(Random.Range(1, maxDamage));
-                }
-            }
+
+
+            _firstContact = true;
+
+            //if (Vector3.Distance(transform.position, player.transform.position) < 4)
+            //{
+
+
+
+            //mPPlayerStats = player.gameObject.GetComponent<PlayerStats>();
+            //if (mPPlayerStats != null)
+            //{
+            // //   mPPlayerStats.ApplyDamage(maxDamage);
+            //  //  Debug.Log("hit Here");
+
+            //    // audioSource.PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
+            //    GetComponent<AudioSource>().PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
+
+
+
+
+            //}
+
+            //}
         }
 
         private void Shout()
@@ -264,6 +307,63 @@ namespace DOFprojFPS
             isWorried = true;
             Shout();
             health -= damage;
+        }
+
+        public void Explosivex()
+        {
+            print("Explosion");
+
+            colliders = Physics.OverlapSphere(transform.position, damageRadius);
+
+            foreach (Collider collider in colliders)
+            {
+                if (collider.GetComponentInParent<PlayerStats>())
+                {
+                    collider.GetComponentInParent<PlayerStats>().ApplyDamage(maxDamage);
+                }
+
+                //if (collider.GetComponent<NPC>())
+                //{
+                //    collider.GetComponent<NPC>().GetHit((int)damage, GameObject.Find("Player").transform);
+                //}
+
+                //if (collider.GetComponent<ZombieNPC>())
+                //{
+                //    collider.GetComponent<ZombieNPC>().ApplyHit((int)damage);
+                //}
+
+                //if (collider.GetComponent<ObjectHealth>())
+                //{
+                //    collider.GetComponent<ObjectHealth>().health -= damage;
+                //}
+
+
+
+
+
+                //if (collider.GetComponent<Rigidbody>() != null)
+                //{
+                //    RaycastHit hit;
+                //    if (Physics.Raycast(transform.position, collider.transform.position - transform.position, out hit, Mathf.Infinity))
+                //    {
+                //        if (hit.collider == collider)
+                //        {
+
+                //            if (collider.GetComponentInParent<PlayerStats>())
+                //            {
+                //                Transform _damageSender = GameObject.Find("Player").transform;
+                //                _damageSender.GetComponent<PlayerStats>().health -= (int)maxDamage;
+                //            }
+                //        }
+                //    }
+
+
+
+
+                //}
+            }
+
+
         }
 
         private void GetFriendsAround()

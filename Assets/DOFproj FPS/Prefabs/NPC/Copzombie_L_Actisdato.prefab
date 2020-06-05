@@ -1140,7 +1140,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0014743283, y: 0.32711405, z: -0.00743746}
+  m_ConnectedAnchor: {x: -0.0014743283, y: 0.32711408, z: -0.0074374676}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -1550,40 +1550,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  maxDamage: 20
+  maxDamage: 5
   isAgressive: 1
   roar: {fileID: 8300000, guid: 56e1fe550a6b5794ebaf41c45f2e9dbc, type: 3}
   attackSounds:
   - {fileID: 8300000, guid: 11cd9fc2a4a407240be780ad9f104c68, type: 3}
   - {fileID: 8300000, guid: 385a831c4342ffd41b9056d6547ce923, type: 3}
   - {fileID: 8300000, guid: 9fcf5dc088c856c4c8a76e3a3d833d13, type: 3}
-  - {fileID: 8300000, guid: 645cecddbba02a04884412fe4eb39fb4, type: 3}
-  - {fileID: 8300000, guid: 285ef40f8bfdc6c448634e580bfeb90d, type: 3}
-  - {fileID: 8300000, guid: 25288068dbf2332429844441df6e20c0, type: 3}
   ragdollSounds:
   - {fileID: 8300000, guid: 0a659c7f0341d2944863ebc8f30e3832, type: 3}
   - {fileID: 8300000, guid: 7ab30477bdc74274aa4a4b4b2de81567, type: 3}
   - {fileID: 8300000, guid: bf0f3c29d3040e74698b5438f61b8d7a, type: 3}
-  - {fileID: 8300000, guid: e93a6fbc59e0766438987df78a3e336b, type: 3}
-  - {fileID: 8300000, guid: a1d59f63cbf06a64d86e6d933e7056a5, type: 3}
-  - {fileID: 8300000, guid: 01517871da61f11469fa7f1276f7e053, type: 3}
-  - {fileID: 8300000, guid: 6beef43294c476a4a927b0d977b90f6e, type: 3}
-  - {fileID: 8300000, guid: bf1608663224f8d458ff5c3eda220e7d, type: 3}
-  - {fileID: 8300000, guid: 562296247b24e8e409c8d50806efe008, type: 3}
-  - {fileID: 8300000, guid: 34c3af9c2403b914893c0a220fc621fb, type: 3}
-  - {fileID: 8300000, guid: 9d3887c7389ca574f9ff9068e086f2ca, type: 3}
-  - {fileID: 8300000, guid: a369b65708595cb4bb93dcc59afe86ed, type: 3}
-  - {fileID: 8300000, guid: ed969e38ef5d7e74a8b6acdd85e2f3b0, type: 3}
-  - {fileID: 8300000, guid: f0bbb5c138e8d5441894608bba527481, type: 3}
-  - {fileID: 8300000, guid: 9dfe7cdcf9138784796fd0d6fbcff98c, type: 3}
-  - {fileID: 8300000, guid: 1d5304a50a1f66c4f9926845ceba4a73, type: 3}
   wanderingSpeed: 0.5
   wanderingTimer: 10
   wanderingRadius: 20
-  attackDistance: 1.6
+  attackDistance: 2
   zombieRagdoll: {fileID: 0}
   runSpeed: 1.5
   notRoared: 1
+  mPPlayerStats: {fileID: 0}
   isWorried: 0
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
@@ -1593,6 +1578,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+  damageRadius: 2
 --- !u!82 &6833184417203096312
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1763,7 +1749,7 @@ NavMeshAgent:
   m_Acceleration: 3
   avoidancePriority: 50
   m_AngularSpeed: 350
-  m_StoppingDistance: 1.2
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -3509,8 +3495,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6833184417203096425}
-  m_LocalRotation: {x: 0.0040102517, y: -4.0101712e-21, z: -5.429996e-20, w: 0.99999195}
-  m_LocalPosition: {x: -5.2272097e-19, y: 0.11237819, z: 0.0009013519}
+  m_LocalRotation: {x: 0.004010252, y: -0, z: -6.162164e-20, w: 0.99999195}
+  m_LocalPosition: {x: -6.2887114e-17, y: 0.11237819, z: 0.0009013519}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6833184417203590785}

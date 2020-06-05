@@ -210,7 +210,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00006766986, y: 0.26499718, z: 0.03182164}
+  m_ConnectedAnchor: {x: 0.00006766993, y: 0.26499683, z: 0.031824008}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1402,7 +1402,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18389148, y: 0.13454683, z: -0.033075165}
+  m_ConnectedAnchor: {x: -0.18389148, y: 0.13454719, z: -0.03307753}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1668,7 +1668,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000033691525, y: 0.26852983, z: 0.00000016391277}
+  m_ConnectedAnchor: {x: 0.00003129989, y: 0.26852983, z: 0.00000014901161}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2493,7 +2493,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18383409, y: 0.13462526, z: -0.03307514}
+  m_ConnectedAnchor: {x: 0.18383409, y: 0.13462561, z: -0.033077504}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3361,7 +3361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  maxDamage: 20
+  maxDamage: 5
   isAgressive: 1
   roar: {fileID: 8300000, guid: 56e1fe550a6b5794ebaf41c45f2e9dbc, type: 3}
   attackSounds:
@@ -3372,16 +3372,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7ab30477bdc74274aa4a4b4b2de81567, type: 3}
   - {fileID: 8300000, guid: 562296247b24e8e409c8d50806efe008, type: 3}
   - {fileID: 8300000, guid: 6beef43294c476a4a927b0d977b90f6e, type: 3}
-  - {fileID: 8300000, guid: a1d59f63cbf06a64d86e6d933e7056a5, type: 3}
-  - {fileID: 8300000, guid: e93a6fbc59e0766438987df78a3e336b, type: 3}
-  - {fileID: 8300000, guid: 01517871da61f11469fa7f1276f7e053, type: 3}
   wanderingSpeed: 0.5
   wanderingTimer: 10
   wanderingRadius: 15
-  attackDistance: 1.6
+  attackDistance: 2
   zombieRagdoll: {fileID: 0}
   runSpeed: 1.5
   notRoared: 1
+  mPPlayerStats: {fileID: 0}
   isWorried: 0
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
@@ -3391,6 +3389,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+  damageRadius: 2
 --- !u!82 &1859066411618092425
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3577,7 +3576,7 @@ NavMeshAgent:
   m_Acceleration: 3
   avoidancePriority: 65
   m_AngularSpeed: 350
-  m_StoppingDistance: 1.2
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -4509,7 +4508,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000033952296, y: 0.26853, z: 0.00000064074993}
+  m_ConnectedAnchor: {x: -0.00003156066, y: 0.26853, z: -0.00000055879354}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
