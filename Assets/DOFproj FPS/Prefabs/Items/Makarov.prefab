@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 784512476
   title: PM
-  description: Worldwide known soviet pistol. Simple, weak but durable weapon
+  description: Pistol, Simple short-barrelled firearm.
   type: 2
   icon: {fileID: 21300000, guid: 0dbfce1456afb0347b26be243836982b, type: 3}
   width: 2
@@ -90,23 +90,15 @@ MonoBehaviour:
   stackSize: 1
   weaponUnloadingItem: {fileID: 8423054175167246931}
   weaponAmmoCount: 8
-  haveScopeAddon: 0
-  scopeImage: {fileID: 0}
-  scopeImageSize: {x: 0, y: 0}
-  scopeImagePosition: {x: 0, y: 0}
-  haveSilencerAddon: 0
-  silencerImage: {fileID: 0}
-  silencerImageSize: {x: 0, y: 0}
-  silencerImagePosition: {x: 0, y: 0}
   onUseEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Item+OnUseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: DOFprojFPS.Item+OnUseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   onPickupEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Item+OnPickupEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: DOFprojFPS.Item+OnPickupEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1 &8121531109708995305
 GameObject:

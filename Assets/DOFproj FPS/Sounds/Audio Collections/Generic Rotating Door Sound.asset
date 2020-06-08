@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Generic Rotating Door Sound
   m_EditorClassIdentifier: 
   _audioGroup: Scene
-  _volume: 0.65
+  _volume: 0.5
   _spatialBlend: 1
   _priority: 128
   _audioClipBanks:

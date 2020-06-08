@@ -81,7 +81,7 @@ namespace DOFprojFPS {
                             //if (collider.GetComponentInParent<PlayerStats>())
                             //{
                                 Transform _damageSender = GameObject.Find("Player").transform;
-                                _damageSender.GetComponent<PlayerStats>().health -= (int)damage;
+                                _damageSender.GetComponent<PlayerStats>().health -= 1;
                             //}
                         }
                     }

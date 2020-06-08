@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.69948715, g: 0.9528302, b: 0.5348434, a: 1}
+  m_Color: {r: 0.990566, g: 0.9797032, b: 0.2756764, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -21249,7 +21249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Skip this Intro !
+  m_Text: '>> Click Here to Skip <<'
 --- !u!222 &1998550733
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionTimer: 3
-  explosionForce: 43
-  damageRadius: 1
+  explosionForce: 50
+  damageRadius: 2
   damage: 200
   explosionEffects: {fileID: 2460201614167559244, guid: 1138b4548a20d4640b1e6253419cf032,
     type: 3}
@@ -55,17 +55,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 400000, guid: 920dc73fceba4594384e736935269bd1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
+    - target: {fileID: 6042912771363199232}
+      propertyPath: m_Name
+      value: GrenadePrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 920dc73fceba4594384e736935269bd1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
+    - target: {fileID: 6042912771363199232}
+      propertyPath: m_Name
+      value: GrenadePrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 920dc73fceba4594384e736935269bd1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
+    - target: {fileID: 6042912771363199232}
+      propertyPath: m_Name
+      value: Grenade
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 920dc73fceba4594384e736935269bd1, type: 3}
       propertyPath: m_Name
@@ -255,17 +255,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.45423508
       objectReference: {fileID: 0}
-    - target: {fileID: 6042912771363199232}
-      propertyPath: m_Name
-      value: GrenadePrefab
+    - target: {fileID: 400000, guid: 920dc73fceba4594384e736935269bd1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 6042912771363199232}
-      propertyPath: m_Name
-      value: GrenadePrefab
+    - target: {fileID: 400000, guid: 920dc73fceba4594384e736935269bd1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 6042912771363199232}
-      propertyPath: m_Name
-      value: Grenade
+    - target: {fileID: 400000, guid: 920dc73fceba4594384e736935269bd1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6042912771363199236}
       propertyPath: m_IsActive
